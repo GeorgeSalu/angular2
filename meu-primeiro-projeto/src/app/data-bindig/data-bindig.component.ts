@@ -15,7 +15,7 @@ export class DataBindigComponent implements OnInit {
   public imgSrc: string = "https://miro.medium.com/v2/resize:fit:720/format:webp/1*qgo4_MwETtxdspEqt12sNA.png";
   public imgTitle: string = "imagem angular";
 
-  public possition: {x: number, y: number} = {x: 0, y: 0};
+  public position: {x: number, y: number} = {x: 0, y: 0};
 
   constructor() { }
 
@@ -27,8 +27,8 @@ export class DataBindigComponent implements OnInit {
   }
 
   public mouseMoveTeste(valor: MouseEvent) {
-    this.possition.x = valor.offsetX;
-    this.possition.y = valor.offsetY;
+    this.position.x = valor.offsetX;
+    this.position.y = valor.offsetY;
   }
 
 }
