@@ -28,3 +28,21 @@
 </ul>
 
 <button (click)="onClickAddList()">Clickar</button>
+
+<hr>
+
+<input type="text" [(ngModel)]="nome">
+
+<div [ngSwitch]="nome">
+  <p *ngSwitchCase="'angular'">
+    Angular
+  </p>
+
+  <p *ngSwitchCase="'react'">
+    React
+  </p>
+
+  <p *ngSwitchDefault>
+    Vue
+  </p>
+</div>
