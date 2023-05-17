@@ -10,7 +10,7 @@ export class DiretivasEstruturaisComponent implements OnInit {
   public condition: boolean = true;
   public conditionClick: boolean = true;
 
-  public list: Array<{nome: string, idade: number}> = [
+  public lista: Array<{nome: string, idade: number}> = [
     {nome: "angular", idade: 29},
     {nome: "jose", idade: 23},
     {nome: "isabel", idade: 1}
@@ -37,11 +37,11 @@ export class DiretivasEstruturaisComponent implements OnInit {
   }
 
   public onClickAddList() {
-    this.list.push({nome: "nay", idade: 21});
+    this.lista.push({nome: "nay", idade: 21});
   }
 
   public onClickEventList(event: number) {
-    this.list.splice(event, 1);
+    this.lista.splice(event, 1);
   }
 
 }
