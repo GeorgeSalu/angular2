@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { TitleComponent } from './title/title.component';
 import { DataBindigComponent } from './data-bindig/data-bindig.component';
 import { FormsModule } from '@angular/forms';
+import { DiretivasEstruturaisComponent } from './diretivas-estruturais/diretivas-estruturais.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TitleComponent,
-    DataBindigComponent
+    DataBindigComponent,
+    DiretivasEstruturaisComponent
   ],
   imports: [
     BrowserModule,
