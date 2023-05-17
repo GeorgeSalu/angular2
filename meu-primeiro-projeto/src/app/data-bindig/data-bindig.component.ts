@@ -9,6 +9,7 @@ export class DataBindigComponent implements OnInit {
 
   public nome: string = "george";
   public idade: number = 29;
+  public maisUm: number = 1;
 
   constructor() { }
 
