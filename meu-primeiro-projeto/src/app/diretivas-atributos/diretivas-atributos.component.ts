@@ -9,7 +9,9 @@ export class DiretivasAtributosComponent implements OnInit {
 
   public valor: boolean = true;
   public heigthPx: string = "20px";
-  public backgroundColor: string = "red"
+  public backgroundColor: string = "red";
+
+  public nome: string = "";
 
   constructor() { }
 
