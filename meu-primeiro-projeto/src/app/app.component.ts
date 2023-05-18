@@ -9,8 +9,7 @@ import { Component, OnInit } from '@angular/core';
     <hr>
   </app-diretivas-atributos>
   -->
-  <app-input [contador]="addValue"></app-input>
-  <button (click)="add()">Add</button>
+  <app-output></app-output>
   <router-outlet></router-outlet>`
 })
 export class AppComponent implements OnInit {
