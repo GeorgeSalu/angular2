@@ -23,7 +23,6 @@ export class OutputComponent implements OnInit {
 
   public getDados(event: number) {
     this.enviarDados.emit(this.list[event]);
-    console.log();
   }
 
 }
