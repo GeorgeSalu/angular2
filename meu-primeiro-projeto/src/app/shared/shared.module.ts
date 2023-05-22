@@ -12,7 +12,12 @@ import { FoodListComponent } from './food-list/food-list.component';
     OutputComponent,
     FoodListComponent
   ],
-  exports: [NewComponentComponent, InputComponent, OutputComponent, FoodListComponent],
+  exports: [
+    NewComponentComponent,
+    InputComponent,
+    OutputComponent,
+    FoodListComponent
+  ],
   imports: [
     CommonModule
   ]
