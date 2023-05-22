@@ -26,8 +26,8 @@ export class FoodListService {
   }
   */
 
-  public foodList(): Observable<FoodList> {
-    return this.http.get<FoodList>(`${this.url}lista-food`)
+  public foodList(): Observable<Array<FoodList>> {
+    return this.http.get<Array<FoodList>>(`${this.url}lista-food`)
                     .pipe(
                       res => res,
                       error => error
@@ -47,6 +47,7 @@ export class FoodListService {
       error => error
     )
   }
+
 
   /*
   public foodListAlert(value: string) {
