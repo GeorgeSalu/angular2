@@ -55,6 +55,16 @@
   <br>
   <br>
 
+  <select name="comidas" ngModel>
+    <option value="">Selecione um alimento</option>
+    <option *ngFor="let item of listComidas" [ngValue]="item.comida">
+      {{ item.comida }} - {{ item.preco }}
+    </option>
+  </select>
+
+  <br>
+  <br>
+
 </form>
 
 {{ form.value | json }}
