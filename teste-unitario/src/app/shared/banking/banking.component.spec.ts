@@ -64,7 +64,7 @@ describe('BankingComponent', () => {
     expect(component.getPoupanca).toEqual(60);
   })
 
-  it(`(U) setDepositar(): should transfer carteira dont have string or poupanca (isNan)) or carteira < value`,() => {
+  it(`(U) setDepositar(): should transfer carteira dont have string or poupanca (isNaN)) or carteira < value`,() => {
     expect(component.setSacar('string')).not.toBeTruthy();
 
     expect(component.setSacar('100')).not.toBeTruthy();
