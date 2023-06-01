@@ -33,7 +33,6 @@ describe('BankingComponent', () => {
 
   it(`(U) getSacar(): should transfer poupanca from carteira`,() => {
     component.setSacar('10');
-    fixture.detectChanges();
 
     expect(component.getPoupanca).toEqual(0);
     expect(component.getCarteira).toEqual(60);
@@ -41,7 +40,6 @@ describe('BankingComponent', () => {
 
   it(`(U) getDepositar(): should transfer carteira from poupanca`,() => {
     component.setDepositar('50');
-    fixture.detectChanges();
 
     expect(component.getCarteira).toEqual(0);
     expect(component.getPoupanca).toEqual(60);
