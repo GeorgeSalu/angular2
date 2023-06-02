@@ -28,12 +28,8 @@ export class ListComponent implements OnInit {
     }
   ]
 
-  constructor(private listInvestimentsService: ListInvestimentsService) { }
+  constructor() { }
 
-  ngOnInit(): void {
-    this.listInvestimentsService.list().subscribe(
-      res => console.log(res)
-    )
-  }
+  ngOnInit(): void {}
 
 }
