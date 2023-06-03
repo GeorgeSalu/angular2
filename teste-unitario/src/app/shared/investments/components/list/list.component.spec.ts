@@ -48,9 +48,16 @@ describe('ListComponent', () => {
   })
 
   it(`(I) should list investments`, () => {
+    spyOn(service, 'list').and.returnValue(of(mockList));
+
+    component.ngOnInit();
+    fixture.detectChanges();
+
+    expect(service.list).toHaveBeenCalledWith();
+
     let investments = fixture.debugElement.nativeElement.querySelectorAll('.list-itens');
 
-    expect(investments.length).toBe(4);
-    expect(investments[0].textContent.trim()).toEqual('itau | 100')
+    expect(investments.length).toBe(5);
+    expect(investments[0].textContent.trim()).toEqual('banco 1 | 100')
   })
 });
