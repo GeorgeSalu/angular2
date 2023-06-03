@@ -56,6 +56,9 @@ describe('ListInvestimentsService', () => {
     service.list().subscribe((res: Array<Investiments>) => {
         expect(res[0].name).toEqual('banco 1');
         expect(res[0].value).toEqual(100);
+
+        expect(res[0].name).toEqual('banco 1');
+        expect(res[0].value).toEqual(100);
         done();
       });
 
