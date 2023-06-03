@@ -51,4 +51,18 @@ describe('ListInvestimentsService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+
+  it('(U) should be list all investments', (done) => {
+    service.list().subscribe((res: Array<Investiments>) => {
+        expect(res[0].name).toEqual('banco 1');
+        expect(res[0].value).toEqual(100);
+        done();
+      });
+
+      const req = httpTestingController.expectOne(url);
+      req.flush(mockList);
+
+      expect(req.request.method).toEqual('GET');
+  });
+
 });
