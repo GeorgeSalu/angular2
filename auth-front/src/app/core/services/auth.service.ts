@@ -16,9 +16,10 @@ export class AuthService {
       map((data) => {
         return console.log(data)
       }),
-      catchError((err) => {
-        console.log(err)
-        return throwError(() => err.error.message)
+      catchError((e) => {
+        if(e.error.message) return throwError(() => e.error.message);
+
+        return throwError(() => "No momento não estamos conseguindo validar esse dado.")
       })
     )
   }
