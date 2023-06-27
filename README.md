@@ -10,23 +10,23 @@ Se você não conhece Javascript / TypeScript , não se preocupe, nessa formaç�
 
 Usado para criar páginas web baseadas em componentes, o ( Javascript / TypeScript ) Angular facilita a manutenção de layouts complexos e isola as responsabilidades de cada parte do seu código. Ele também conta com uma comunidade muito grande e, tendo o Google como mantenedor do projeto, ele sempre está atualizado e evoluindo para se tornar ainda melhor.
 
-#### DESENVOLVA EM TODAS AS PLATAFORMAS
+#### Desenvolva em todas as plataformas
 
 Aprenda uma maneira de construir aplicativos com Angular e reutilizar seu código e habilidades para construir aplicativos para qualquer destino de implantação. Para web, web móvel, móvel nativo e desktop nativo.
 
 
-#### VELOCIDADE E DESEMPENHO
+#### Velocidade e desempenho
 
 Alcance a velocidade máxima possível na plataforma da Web hoje e vá além, por meio de Web Workers e renderização do lado do servidor.
 
 O Angular coloca você no controle da escalabilidade. Atenda aos enormes requisitos de dados construindo modelos de dados em RxJS, Immutable.js ou outro modelo push.
 
 
-#### FERRAMENTAS INCRÍVEIS
+#### Ferramentas incriveis
 
 Crie recursos rapidamente com modelos simples e declarativos. Estenda a linguagem do modelo com seus próprios componentes e use uma ampla gama de componentes existentes. Obtenha ajuda e feedback específicos do Angular imediatos com quase todos os IDE e editores. Tudo isso junto para que você possa se concentrar na criação de aplicativos incríveis, em vez de tentar fazer o código funcionar.
 
 
-#### AMADO POR MILHÕES
+#### Amado por milhões
 
 Do protótipo à implantação global, o Angular oferece produtividade e infraestrutura escalonável que dá suporte aos maiores aplicativos do Google.
