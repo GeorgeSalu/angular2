@@ -1,6 +1,6 @@
 ## Angular 2+ 13
 
-#### Curso de desenvolvimento web com javascript / typeScript e angular
+#### Curso de desenvolvimento web com javascript/typeScript e angular
 
 O que você aprenderá?
 
