@@ -1,4 +1,4 @@
-## Angular 2+ 13
+## Angular 2+ (13)
 
 #### Curso de desenvolvimento web com javascript/typeScript e angular
 
