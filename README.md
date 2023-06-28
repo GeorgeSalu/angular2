@@ -2,7 +2,7 @@
 
 #### Curso de desenvolvimento web com javascript/typeScript e angular
 
-O que você aprenderá?
+#### O que você aprenderá?
 
 O Angular ( Versão 14 + ) é um dos frameworks mais populares do mercado de desenvolvimento front-end. Utilizado para construir aplicações web, mobile ou desktop, que são desenvolvidas utilizando Javascript / TypeScript , HTML e CSS.
 
