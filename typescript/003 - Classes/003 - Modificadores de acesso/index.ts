@@ -19,3 +19,4 @@ class Pessoa {
 }
 
 const pessoa = new Pessoa("george", 30);
+console.log(pessoa)
