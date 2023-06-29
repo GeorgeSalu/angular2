@@ -1,6 +1,7 @@
 class Pessoa {
   public nome: string = "";
   public idade: number = 0;
+  private _profissao: string = "programador";
 
   constructor(nome: string, idade: number){
     this.nome = nome;
