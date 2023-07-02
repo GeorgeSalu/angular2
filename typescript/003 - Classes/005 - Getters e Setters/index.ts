@@ -27,6 +27,10 @@ class Dener extends Pessoa {
     return this._profissao;
   }
 
+  set profissao(valor: string) {
+    this._profissao = valor;
+  }
+
 }
 
 const dener = new Dener();
