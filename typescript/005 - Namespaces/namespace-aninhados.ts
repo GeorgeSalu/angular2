@@ -1,4 +1,4 @@
-namespace Pessoa {
+export namespace Pessoa {
   export namespace Maria {
     const data = 1 + 1;
 
