@@ -1,43 +1,14 @@
-import { AfterContentInit, AfterViewInit, Component, DoCheck, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit, OnChanges, DoCheck, OnDestroy, AfterContentInit, AfterViewInit {
-  title = 'projeto1';
+export class AppComponent  {
 
-  constructor() {
-    console.log("componente construtor")
-  }
+  title = 'Bem vindo ao treinamento de angular';
 
-  ngAfterViewInit(): void {
-    console.log("")
-  }
-
-  ngAfterContentInit(): void {
-    console.log("componente ngAfterContenteInit")
-  }
-
-  ngOnDestroy(): void {
-    console.log("componente onDestroy")
-  }
-
-  ngDoCheck(): void {
-    console.log("componente doCheck")
-  }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log("componente OnChanges")
-  }
-
-  ngOnInit(): void {
-    console.log("componente onInit")
-  }
-
-  mudarTexto() {
-    this.title += "a";
-  }
+  constructor() { }
 
 }
