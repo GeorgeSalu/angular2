@@ -7,7 +7,30 @@ import { Component } from '@angular/core';
 })
 export class AppComponent  {
 
-  title = 'ola';
+  title = null;
+
+  clientes = [
+    {
+      nome: "alexandre",
+      sexo: "masculino",
+      idade: 21
+    },
+    {
+      nome: "roberto",
+      sexo: "masculino",
+      idade: 30
+    },
+    {
+      nome: "mauro",
+      sexo: "feminino",
+      idade: 40
+    },
+    {
+      nome: "claudia",
+      sexo: "feminino",
+      idade: 50
+    }
+  ]
 
   constructor() { }
 

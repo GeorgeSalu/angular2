@@ -1,15 +1,11 @@
 
-<span [ngSwitch]="title">
-  <p *ngSwitchCase="'ola'">
-    esse é um paragrafo verdadeiro
-  </p>
-  <p *ngSwitchCase="false">
-    esse é um paragrafo falso
-  </p>
-  <p *ngSwitchDefault>
-    esse é um paragrafo default
-  </p>
-</span>
+<table>
+  <tr *ngFor="let cliente of clientes">
+    <td>{{cliente.nome}}</td>
+    <td>{{cliente.sexo}}</td>
+    <td>{{cliente.idade}}</td>
+  </tr>
+</table>
 
 
 <router-outlet></router-outlet>
