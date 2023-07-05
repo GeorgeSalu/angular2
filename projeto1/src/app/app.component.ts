@@ -12,4 +12,8 @@ export class AppComponent  {
 
   constructor() { }
 
+  chamarFuncao() {
+    console.log("esse é um click")
+  }
+
 }
