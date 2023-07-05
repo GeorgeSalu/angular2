@@ -1,8 +1,15 @@
-<h1 *ngIf="title; else mensagemPadrao">{{title}}</h1>
 
-<ng-template #mensagemPadrao>
-  <h1>Bem vindo ao angular 15</h1>
-</ng-template>
+<span [ngSwitch]="title">
+  <p *ngSwitchCase="'ola'">
+    esse é um paragrafo verdadeiro
+  </p>
+  <p *ngSwitchCase="false">
+    esse é um paragrafo falso
+  </p>
+  <p *ngSwitchDefault>
+    esse é um paragrafo default
+  </p>
+</span>
 
 
 <router-outlet></router-outlet>
