@@ -13,22 +13,26 @@ export class AppComponent  {
     {
       nome: "alexandre",
       sexo: "masculino",
-      idade: 21
+      idade: 21,
+      salario: 1000
     },
     {
       nome: "roberto",
       sexo: "masculino",
-      idade: 30
+      idade: 30,
+      salario: 2000
     },
     {
       nome: "mauro",
       sexo: "feminino",
-      idade: 40
+      idade: 40,
+      salario: 3000
     },
     {
       nome: "claudia",
       sexo: "feminino",
-      idade: 50
+      idade: 50,
+      salario: 1020
     }
   ]
 
