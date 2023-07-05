@@ -4,7 +4,7 @@
 
 #### O que você aprenderá?
 
-O Angular é um dos frameworks mais populares do mercado de desenvolvimento front-end. Utilizado para construir aplicações web, mobile ou desktop, que são desenvolvidas utilizando JavascriptTypeScript,HTML e CSS.
+O Angular é um dos frameworks mais populares do mercado de desenvolvimento front-end. Utilizado para construir aplicações web, mobile ou desktop, que são desenvolvidas utilizando Javascript/TypeScript,HTML e CSS.
 
 Se você não conhece javascript/typeScript , não se preocupe, nessa formação te daremos a base de como trabalhar com essa linguagem para que você aproveite o máximo dela e facilite seu dia-a-dia, tirando proveito da análise estática de código e do sistema de tipos dela.
 
