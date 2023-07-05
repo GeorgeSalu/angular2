@@ -1,8 +1,8 @@
-<h1>{{title}}</h1>
-<img [src]="imageUrl" >
+<h1 *ngIf="title; else mensagemPadrao">{{title}}</h1>
 
-<button (click)="chamarFuncao()">chamar funcao</button>
+<ng-template #mensagemPadrao>
+  <h1>Bem vindo ao angular 15</h1>
+</ng-template>
 
-<input [(ngModel)]="title">
 
 <router-outlet></router-outlet>
