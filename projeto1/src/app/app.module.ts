@@ -8,6 +8,7 @@ import { SexoPipe } from './pipes/sexo.pipe';
 import { ToolbarComponent } from './componentes/toolbar/toolbar.component';
 import { NovoComponent } from './componentes/novo/novo.component';
 import { HomeComponent } from './componentes/home/home.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { HomeComponent } from './componentes/home/home.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
