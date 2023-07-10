@@ -16,7 +16,7 @@ export class ProdutoService {
     return this.http.get<Produtos>(`${this.baseUrl}produtos`)
   }
 
-  getProdutosPeloId(id: string): Observable<Produto> {
+  getProdutoPeloId(id: string): Observable<Produto> {
     return this.http.get<Produto>(`${this.baseUrl}produtos/${id}`)
   }
 

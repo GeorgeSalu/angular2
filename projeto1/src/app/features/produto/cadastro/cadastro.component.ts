@@ -25,7 +25,7 @@ export class CadastroComponent implements OnInit{
   ngOnInit(): void {
     this.id = this.activatedRoute.snapshot.url[1].path;
 
-    this.produtoService.getProdutosPeloId(this.id).subscribe((produto: Produto) => {
+    this.produtoService.getProdutoPeloId(this.id).subscribe((produto: Produto) => {
       this.produto = produto;
       this.nome = this.produto.nome;
       this.descricao = this.produto.descricao;
