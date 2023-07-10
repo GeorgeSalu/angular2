@@ -23,7 +23,7 @@ export class ListagemComponent implements OnInit {
     })
   }
 
-  selectionarProduto(produto: Produto) {
+  selecionarProduto(produto: Produto) {
     this.router.navigate(["produto","editar-produto", produto.id])
   }
 
