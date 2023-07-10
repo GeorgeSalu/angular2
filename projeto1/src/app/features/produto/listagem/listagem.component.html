@@ -12,6 +12,14 @@
 
       <mat-card-title class="title">{{ produto.nome }}</mat-card-title>
 
+      <div >
+        <button mat-mini-fab color="accent"
+        matToolTip="excluir produto"
+        aria-label="Example icon button with a bookmark icon"
+        (click)="excluirProduto(produto)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
 
     </mat-card-header>
     <img mat-card-image [src]="produto.imagemUrl" alt="Foto do produto">
