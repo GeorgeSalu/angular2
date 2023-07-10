@@ -1,17 +1,19 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Produtos } from '../models/produto.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProdutoService {
 
-  private baseUrl: string = "https://viacep.com.br/ws/01001000/json/";
+  private baseUrl: string = "http://localhost:3000/";
 
   constructor(private http: HttpClient) { }
 
-  getCidadePeloCep() {
-    return this.http.get(this.baseUrl);
+  getProdutos(): Observable<Produtos> {
+    return this.http.get<Produtos>(`${this.baseUrl}produtos`)
   }
 
 }
