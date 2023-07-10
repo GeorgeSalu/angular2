@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProdutoService } from '../services/produto.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Produto } from '../models/produto.model';
 
 @Component({
@@ -11,16 +11,41 @@ import { Produto } from '../models/produto.model';
 export class CadastroComponent implements OnInit{
 
   id!: string;
-  produto!:Produto;
+  produto!: Produto;
+
+  nome: string = "";
+  descricao: string = "";
+  preco: string = "";
+  estoque: number = 0;
 
   constructor(private produtoService: ProdutoService,
-              private activatedRoute: ActivatedRoute) {}
+              private activatedRoute: ActivatedRoute,
+              private router: Router) {}
 
   ngOnInit(): void {
     this.id = this.activatedRoute.snapshot.url[1].path;
 
     this.produtoService.getProdutosPeloId(this.id).subscribe((produto: Produto) => {
       this.produto = produto;
+      this.nome = this.produto.nome;
+      this.descricao = this.produto.descricao;
+      this.preco = this.produto.preco;
+      this.estoque = this.produto.estoque;
+    })
+  }
+
+  salvarProduto() {
+    const produtoParaSalvar = {
+      id: parseInt(this.id),
+      nome: this.nome,
+      preco: this.preco,
+      imagemUrl: this.produto.imagemUrl,
+      descricao: this.descricao,
+      estoque: this.estoque
+    }
+
+    this.produtoService.atualizarProduto(produtoParaSalvar).subscribe(response => {
+      this.router.navigate(["produto", "listagem"]);
     })
   }
 
