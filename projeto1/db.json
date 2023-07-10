@@ -53,6 +53,18 @@
         "sexo":"f",
         "idade":22,
         "salario":"13000"
-     }
+     },
+     {
+      "nome":"Claudiane",
+      "sexo":"f",
+      "idade":52,
+      "salario":"1300"
+    },
+    {
+      "nome":"Claudineia",
+      "sexo":"f",
+      "idade":32,
+      "salario":"1900"
+    }
   ]
 }
