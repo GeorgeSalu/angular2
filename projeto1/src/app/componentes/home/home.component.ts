@@ -19,15 +19,7 @@ export class HomeComponent {
 
   title = null;
 
-  clientes: Pessoas = [
-    {
-      nome: "roberto",
-      sexo: "m",
-      idade: 33,
-      salario: "100"
-    }
-  ]
-
+  clientes!: Pessoas;
   displayedColumns: string[] = ['nome', 'sexo', 'idade', 'salario'];
   dataSource !: MatTableDataSource<any>;
   ngOnInit() {
