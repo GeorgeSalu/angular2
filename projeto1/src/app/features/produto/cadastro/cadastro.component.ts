@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProdutoService } from '../services/produto.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Produto } from '../models/produto.model';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-cadastro',
@@ -16,18 +17,17 @@ export class CadastroComponent implements OnInit{
   isNovoProduto: boolean = false;
   tituloPagina: string = "";
 
-  nome: string = "";
-  descricao: string = "";
-  preco: string = "";
-  estoque: number = 0;
+  formCadastroProduto!: FormGroup
 
   constructor(private produtoService: ProdutoService,
               private activatedRoute: ActivatedRoute,
-              private router: Router) {}
+              private router: Router,
+              private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
 
     this.rota = this.activatedRoute.snapshot.url[0].path;
+    this.criarFormulario();
 
     if(this.rota === "editar-produto") {
 
@@ -35,10 +35,10 @@ export class CadastroComponent implements OnInit{
 
       this.produtoService.getProdutoPeloId(this.id).subscribe((produto: Produto) => {
         this.produto = produto;
-        this.nome = this.produto.nome;
-        this.descricao = this.produto.descricao;
-        this.preco = this.produto.preco;
-        this.estoque = this.produto.estoque;
+        this.formCadastroProduto.controls['nome'].setValue(this.produto.nome);
+        this.formCadastroProduto.controls['descricao'].setValue(this.produto.descricao);
+        this.formCadastroProduto.controls['estoque'].setValue(this.produto.estoque);
+        this.formCadastroProduto.controls['preco'].setValue(this.produto.preco);
         this.tituloPagina = "editar produto"
       })
     } else {
@@ -48,13 +48,22 @@ export class CadastroComponent implements OnInit{
 
   }
 
+  criarFormulario() {
+    this.formCadastroProduto = this.formBuilder.group({
+      nome: "",
+      descricao: "",
+      preco: "",
+      estoque: 0
+    })
+  }
+
   salvarProduto() {
     const produtoParaSalvar: Produto = {
       id: parseInt(this.id),
-      nome: this.nome,
-      preco: this.preco,
-      descricao: this.descricao,
-      estoque: this.estoque
+      nome: this.formCadastroProduto.controls['nome'].value,
+      descricao: this.formCadastroProduto.controls['descricao'].value,
+      estoque: this.formCadastroProduto.controls['estoque'].value,
+      preco: this.formCadastroProduto.controls['preco'].value,
     }
 
     if(this.isNovoProduto) {
