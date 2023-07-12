@@ -6,4 +6,8 @@ export class Aviao extends Veiculo {
     console.log(`O aviao ${this.marca} ${this.modelo} esta se movendo`)
   }
 
+  outroMetodo(): void {
+    console.log("sou uma aviao")
+  }
+
 }
