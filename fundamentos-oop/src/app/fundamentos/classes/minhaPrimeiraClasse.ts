@@ -9,12 +9,16 @@ export class MinhaPrimeiraClasse {
     this.cargo = cargo;
   }
 
-  mostarNome(): string {
+  get mostarNome(): string {
     return this.nome;
   }
 
-  setNome(name: string): void {
-    this.nome = name
+  set setNome(name: string) {
+    if(name != "") {
+      this.nome = name
+    } else {
+      console.log("insira um valor para nome")
+    }
   }
 
 }

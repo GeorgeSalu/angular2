@@ -13,16 +13,11 @@ export class AppComponent implements OnInit {
 
 
   ngOnInit(): void {
-    let meuPrimeiraClasse = new MinhaPrimeiraClasse("Danilo", 30, "dev");
-    let meuSegundaClasse = new MinhaPrimeiraClasse("Emerson", 20, "garcom");
+    let meuPrimeiraObjeto = new MinhaPrimeiraClasse("Danilo", 30, "dev");
+    let meuSegundaObjeto = new MinhaPrimeiraClasse("Emerson", 20, "garcom");
     let meuTerceiroObjeto = new MinhaSegundaClasse("rafa", 30, "analista");
 
-    meuPrimeiraClasse.setNome("juliano")
-    console.log(meuTerceiroObjeto)
-    console.log(meuTerceiroObjeto.showNome())
-
-    console.log(meuSegundaClasse.mostarNome());
-    console.log(meuPrimeiraClasse);
+    console.log(meuPrimeiraObjeto.mostarNome)
   }
 
 }
