@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MeuPrimeiroComponentComponent } from './meu-primeiro-component/meu-primeiro-component.component';
+import { MeuPrimeiroComponentComponent } from './fundamentos/meu-primeiro-component/meu-primeiro-component.component';
 import { MinhaPrimeiraClasse } from './fundamentos/classes/minhaPrimeiraClasse';
 import { MinhaSegundaClasse } from './fundamentos/classes/minhaSegundaClasse';
 
