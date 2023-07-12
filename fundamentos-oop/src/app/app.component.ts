@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MeuPrimeiroComponentComponent } from './meu-primeiro-component/meu-primeiro-component.component';
+import { MinhaPrimeiraClasse } from './fundamentos/classes/minhaPrimeiraClasse';
 
 @Component({
   selector: 'app-root',
@@ -11,9 +12,13 @@ export class AppComponent implements OnInit {
 
 
   ngOnInit(): void {
-    let meuPrimeiroComponent = new MeuPrimeiroComponentComponent();
+    let meuPrimeiraClasse = new MinhaPrimeiraClasse("Danilo", 30, "dev");
+    let meuSegundaClasse = new MinhaPrimeiraClasse("Emerson", 20, "garcom");
 
-    console.log(meuPrimeiroComponent)
+    meuPrimeiraClasse.setNome("juliano")
+
+    console.log(meuSegundaClasse.mostarNome());
+    console.log(meuPrimeiraClasse);
   }
 
 }
