@@ -6,6 +6,6 @@ export class ClienteVIP extends ClienteAbstract {
   }
 
   override mensagemParabens(): string {
-    return "Muito obrigado por ser nosso cliete VIP!"
+    return "Muito obrigado por ser nosso cliente VIP!"
   }
 }
