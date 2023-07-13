@@ -7,20 +7,20 @@
   <h2>Detalhes da reserva</h2>
   <div class="form-group">
     <label>Nome:</label>
-    <input class="form-control" placeholder="Nome do cliente">
+    <input [(ngModel)]="cliente.nome" class="form-control" placeholder="Nome do cliente">
   </div>
   <div class="form-group">
     <label>Tipo:</label>
-    <select class="form-control">
+    <select [(ngModel)]="tipoCliente" class="form-control">
       <option value="normal">Normal</option>
       <option value="vip">VIP</option>
     </select>
   </div>
   <div class="form-group">
     <label>Quantidade de Dias:</label>
-    <input type="number" min="1" class="form-control" placeholder="Quantidade de dias">
+    <input [(ngModel)]="quantidadeDias" type="number" min="1" class="form-control" placeholder="Quantidade de dias">
   </div>
-  <button class="btn btn-primary">Fazer reserva</button>
+  <button (click)="fazerRezerva()" class="btn btn-primary">Fazer reserva</button>
 
   <div class="mt-4">
     <h2>Lista de Reservas</h2>

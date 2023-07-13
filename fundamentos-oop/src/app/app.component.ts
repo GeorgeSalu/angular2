@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ClienteNormal } from './modelos/ClienteNormal';
-import { QuartoSimples } from './modelos/quartoSimples';
-import { Reserva } from './modelos/reserva';
+import { Quarto } from './interfaces/quarto.interface';
 
 @Component({
   selector: 'app-root',
@@ -11,14 +9,19 @@ import { Reserva } from './modelos/reserva';
 export class AppComponent implements OnInit {
   title = 'fundamentos-oop';
 
+  cliente = {nome: ""};
+  tipoCliente : string = "normal";
+  quarto !: Quarto;
+  tipoQuarto = "";
+  quantidadeDias !: number;
+
 
   ngOnInit(): void {
-    let cliente = new ClienteNormal("joao", "normal");
-    let quarto = new QuartoSimples();
-    let reserva = new Reserva(cliente, quarto, 100);
 
-    console.log(reserva)
+  }
 
+  fazerRezerva(): void {
+    console.log(this.cliente.nome, this.tipoCliente, this.tipoQuarto, this.quantidadeDias)
   }
 
 }
