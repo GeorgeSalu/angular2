@@ -2,7 +2,7 @@ import { Cliente } from "../interfaces/cliente.interface";
 import { Quarto } from "../interfaces/quarto.interface";
 
 export class Reserva {
-  constructor(public cleinte: Cliente, public quarto: Quarto, public quantidadeDias: number) {
+  constructor(public cliente: Cliente, public quarto: Quarto, public quantidadeDias: number) {
 
   }
 
@@ -11,7 +11,7 @@ export class Reserva {
   }
 
   get detalhesReserva(): string {
-    return `Reserva feita por ${this.cleinte.nome} para um quarto ${this.quarto.tipo} por
-      ${this.quantidadeDias} dias. ${this.cleinte.mensagemParabens} o valor total ficou: ${this.valorTotal}`
+    return `Reserva feita por ${this.cliente.nome} para um quarto ${this.quarto.tipo} por
+      ${this.quantidadeDias} dias. ${this.cliente.mensagemParabens} o valor total ficou: ${this.valorTotal}`
   }
 }
