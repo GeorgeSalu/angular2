@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { MeuPrimeiroComponentComponent } from './fundamentos/meu-primeiro-component/meu-primeiro-component.component';
-import { MinhaPrimeiraClasse } from './fundamentos/classes/minhaPrimeiraClasse';
-import { MinhaSegundaClasse } from './fundamentos/classes/minhaSegundaClasse';
+import { ClienteNormal } from './modelos/ClienteNormal';
+import { QuartoSimples } from './modelos/quartoSimples';
+import { Reserva } from './modelos/reserva';
 
 @Component({
   selector: 'app-root',
@@ -13,11 +13,12 @@ export class AppComponent implements OnInit {
 
 
   ngOnInit(): void {
-    let meuPrimeiraObjeto = new MinhaPrimeiraClasse("Danilo", 30, "dev");
-    let meuSegundaObjeto = new MinhaPrimeiraClasse("Emerson", 20, "garcom");
-    let meuTerceiroObjeto = new MinhaSegundaClasse("rafa", 30, "analista");
+    let cliente = new ClienteNormal("joao", "normal");
+    let quarto = new QuartoSimples();
+    let reserva = new Reserva(cliente, quarto, 100);
 
-    console.log(meuPrimeiraObjeto.mostarNome)
+    console.log(reserva)
+
   }
 
 }
