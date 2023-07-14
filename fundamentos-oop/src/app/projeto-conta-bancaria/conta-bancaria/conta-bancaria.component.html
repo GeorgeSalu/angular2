@@ -37,11 +37,11 @@
 
           <div class="form-group">
               <label for="valorTransacao">Valor:</label>
-              <input id="valorTransacao" type="number" placeholder="Valor" name="valorTransacao" class="form-control">
+              <input id="valorTransacao" [(ngModel)]="valorTransacao" type="number" placeholder="Valor" name="valorTransacao" class="form-control">
           </div>
 
-          <button class="btn btn-success mr-2">Depositar</button>
-          <button class="btn btn-danger">Sacar</button>
+          <button class="btn btn-success mr-2" (click)="depositar()">Depositar</button>
+          <button class="btn btn-danger" (click)="sacar()">Sacar</button>
       </div>
   </div>
 </div>

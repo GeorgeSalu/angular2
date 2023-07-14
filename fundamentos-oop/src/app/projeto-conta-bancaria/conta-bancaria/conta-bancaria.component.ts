@@ -36,4 +36,19 @@ export class ContaBancariaComponent {
       }
     }
   }
+
+  depositar(): void {
+    if(this.valorTransacao && this.valorTransacao > 0){
+      this.conta && this.conta.depositar(this.valorTransacao);
+      this.valorTransacao = null;
+    }
+  }
+
+  sacar() {
+    if(this.valorTransacao && this.valorTransacao > 0) {
+      this.conta && this.conta.sacar(this.valorTransacao);
+      this.valorTransacao = null;
+    }
+  }
+
 }
