@@ -1,8 +1,8 @@
 import { ContaBancaria } from "./contaBancaria";
 
 export class ContaCorrente extends ContaBancaria {
-  constructor(titula: string) {
-    super(titula)
+  constructor(titular: string) {
+    super(titular)
   }
 
   override sacar(valor: number): void {
