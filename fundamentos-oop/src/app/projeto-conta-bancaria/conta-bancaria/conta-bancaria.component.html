@@ -6,19 +6,19 @@
               <div class="card-body">
                   <form>
                       <div class="form-group">
-                          <label for="nome">Nome do titular:</label>
-                          <input id="nome" placeholder="Nome do titular" name="nome" class="form-control">
+                          <label for="nome" >Nome do titular:</label>
+                          <input id="nome" [(ngModel)]="nome" placeholder="Nome do titular" name="nome" class="form-control">
                       </div>
                       <div class="form-group">
                           <label for="tipoConta">Tipo de conta:</label>
-                          <select id="tipoConta" name="tipoConta" class="form-control">
+                          <select id="tipoConta" [(ngModel)]="tipoConta" name="tipoConta" class="form-control">
                               <option value="">Selecione o tipo de conta</option>
                               <option value="corrente">Conta Corrente</option>
                               <option value="salario">Conta Salario</option>
                               <option value="poupanca">Conta Poupança</option>
                           </select>
                       </div>
-                      <button class="btn btn-primary">Criar Conta</button>
+                      <button class="btn btn-primary" (click)="criarConta()">Criar Conta</button>
                   </form>
               </div>
           </div>
