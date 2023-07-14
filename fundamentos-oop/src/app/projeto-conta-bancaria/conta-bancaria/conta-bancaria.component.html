@@ -1,4 +1,4 @@
-<div class="container mt-5">
+<div class="container mt-5" *ngIf="!conta">
   <div class="row justify-content-center">
       <div class="col-md-6">
           <div class="card">
@@ -26,14 +26,14 @@
   </div>
 </div>
 
-<div class="container mt-5">
+<div class="container mt-5" *ngIf="conta">
   <div class="card">
       <div class="card-header">
-          <h2 class="mb-0">Titular:</h2>
+          <h2 class="mb-0">Titular: {{conta.titulo}}</h2>
       </div>
       <div class="card-body">
-          <p class="mb-1"><strong>Tipo de Conta:</strong></p>
-          <p class="mb-3"><strong>Saldo:</strong></p>
+          <p class="mb-1"><strong>Tipo de Conta: {{conta.getTipo()}}</strong></p>
+          <p class="mb-3"><strong>Saldo: R$ {{conta.getSaldo}}</strong></p>
 
           <div class="form-group">
               <label for="valorTransacao">Valor:</label>
