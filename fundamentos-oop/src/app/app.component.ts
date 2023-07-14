@@ -14,7 +14,6 @@ import { Reserva } from './projeto-reserva-hoteis/modelos/reserva';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'fundamentos-oop';
 
   reservaHoteis: boolean = false;
   contaBancaria: boolean = false;
