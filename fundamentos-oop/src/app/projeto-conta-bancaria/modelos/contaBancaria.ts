@@ -1,5 +1,5 @@
 export abstract class ContaBancaria {
-  constructor(public titulo: string, protected saldo: number = 0) {}
+  constructor(public titular: string, protected saldo: number = 0) {}
 
   depositar(valor: number): void {
     this.saldo += valor;
