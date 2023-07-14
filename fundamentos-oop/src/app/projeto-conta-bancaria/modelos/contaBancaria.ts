@@ -10,4 +10,6 @@ export abstract class ContaBancaria {
   get getSaldo(): number {
     return this.saldo;
   }
+
+  abstract getTipo(): string;
 }
