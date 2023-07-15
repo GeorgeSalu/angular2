@@ -8,6 +8,7 @@ import { ContaBancariaComponent } from './projeto-conta-bancaria/conta-bancaria/
 import { ReservaHoteisComponent } from './projeto-reserva-hoteis/reserva-hoteis/reserva-hoteis.component';
 import { LojaVirtualComponent } from './projeto-loja-virtual/componentes/loja-virtual/loja-virtual.component';
 import { ProdutosComponent } from './projeto-loja-virtual/componentes/produtos/produtos.component';
+import { CarrinhoComponent } from './projeto-loja-virtual/componentes/carrinho/carrinho.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ProdutosComponent } from './projeto-loja-virtual/componentes/produtos/p
     ContaBancariaComponent,
     ReservaHoteisComponent,
     LojaVirtualComponent,
-    ProdutosComponent
+    ProdutosComponent,
+    CarrinhoComponent
   ],
   imports: [
     BrowserModule,
