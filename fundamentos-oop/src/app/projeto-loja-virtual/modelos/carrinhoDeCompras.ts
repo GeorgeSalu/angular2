@@ -1,4 +1,4 @@
-import { ICarrinho } from "../interface/carrinho.interfce";
+import { ICarrinho } from "../interface/carrinho.interface";
 import { IProduto } from "../interface/produto.interface";
 
 export class CarrinhoDeCompras implements ICarrinho {
