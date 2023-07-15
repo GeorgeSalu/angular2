@@ -6,13 +6,15 @@ import { MeuPrimeiroComponentComponent } from './fundamentos/meu-primeiro-compon
 import { FormsModule } from '@angular/forms';
 import { ContaBancariaComponent } from './projeto-conta-bancaria/conta-bancaria/conta-bancaria.component';
 import { ReservaHoteisComponent } from './projeto-reserva-hoteis/reserva-hoteis/reserva-hoteis.component';
+import { LojaVirtualComponent } from './projeto-loja-virtual/componentes/loja-virtual/loja-virtual.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MeuPrimeiroComponentComponent,
     ContaBancariaComponent,
-    ReservaHoteisComponent
+    ReservaHoteisComponent,
+    LojaVirtualComponent
   ],
   imports: [
     BrowserModule,
