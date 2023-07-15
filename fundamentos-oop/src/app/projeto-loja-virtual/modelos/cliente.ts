@@ -1,6 +1,6 @@
 import { Usuario } from "./usuario";
 
-export class Clientes extends Usuario {
+export class Cliente extends Usuario {
   constructor(id: number, nome: string) {
     super(id, nome);
   }
