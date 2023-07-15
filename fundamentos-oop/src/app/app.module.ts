@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { ContaBancariaComponent } from './projeto-conta-bancaria/conta-bancaria/conta-bancaria.component';
 import { ReservaHoteisComponent } from './projeto-reserva-hoteis/reserva-hoteis/reserva-hoteis.component';
 import { LojaVirtualComponent } from './projeto-loja-virtual/componentes/loja-virtual/loja-virtual.component';
+import { ProdutosComponent } from './projeto-loja-virtual/componentes/produtos/produtos.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { LojaVirtualComponent } from './projeto-loja-virtual/componentes/loja-vi
     MeuPrimeiroComponentComponent,
     ContaBancariaComponent,
     ReservaHoteisComponent,
-    LojaVirtualComponent
+    LojaVirtualComponent,
+    ProdutosComponent
   ],
   imports: [
     BrowserModule,

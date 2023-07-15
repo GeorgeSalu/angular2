@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="!showProdutosComponent">
   <div class="jumbotron mt-5 text-center">
       <h1 class="display-4">Bem-vindo à nossa Loja Virtual</h1>
       <p class="lead">Fique à vontade e explore nossos incríveis produtos!</p>
@@ -7,10 +7,10 @@
           <div class="col-6">
               <div class="card shadow">
                   <div class="card-body">
-                      <form >
+                      <form  (ngSubmit)="entrarNaLoja()">
                           <div class="form-group">
                               <label for="nome">Digite seu nome para entrar</label>
-                              <input type="text" class="form-control" id="nome" name="nome" required>
+                              <input type="text" class="form-control" [(ngModel)]="nome" id="nome" name="nome" required>
                           </div>
                           <button type="submit" class="btn btn-primary btn-block">Entrar na Loja</button>
                       </form>
@@ -20,3 +20,5 @@
       </div>
   </div>
 </div>
+
+<app-produtos *ngIf="showProdutosComponent"></app-produtos>
