@@ -32,6 +32,7 @@ export class CarrinhoComponent implements OnInit {
     let data = new Date();
     let transacao = new Transacao(this.produtosSelecionados, total, data);
     this.transacaoService.adicionaTransacao(transacao);
+    this.compraFinalizada = true;
   }
 
 }

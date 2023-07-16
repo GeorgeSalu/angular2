@@ -9,6 +9,7 @@ import { ReservaHoteisComponent } from './projeto-reserva-hoteis/reserva-hoteis/
 import { LojaVirtualComponent } from './projeto-loja-virtual/componentes/loja-virtual/loja-virtual.component';
 import { ProdutosComponent } from './projeto-loja-virtual/componentes/produtos/produtos.component';
 import { CarrinhoComponent } from './projeto-loja-virtual/componentes/carrinho/carrinho.component';
+import { ComprasComponent } from './projeto-loja-virtual/componentes/compras/compras.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { CarrinhoComponent } from './projeto-loja-virtual/componentes/carrinho/c
     ReservaHoteisComponent,
     LojaVirtualComponent,
     ProdutosComponent,
-    CarrinhoComponent
+    CarrinhoComponent,
+    ComprasComponent
   ],
   imports: [
     BrowserModule,
