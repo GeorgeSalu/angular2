@@ -29,7 +29,8 @@ export class CarrinhoComponent implements OnInit {
 
   finalizarCompra(): void {
     let total = this.calcularTotal();
-    let transacao = new Transacao(this.produtosSelecionados, total, new Date());
+    let data = new Date();
+    let transacao = new Transacao(this.produtosSelecionados, total, data);
     this.transacaoService.adicionaTransacao(transacao);
   }
 
