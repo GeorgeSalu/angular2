@@ -17,7 +17,7 @@
                   <h6 class="card-text text-right">Preço: {{produto.preco | currency: "BRL": "symbol": "2.2-2"}}</h6>
               </div>
               <div class="card-footer">
-                  <a href="#" class="btn btn-primary">Adicionar ao Carrinho</a>
+                  <a href="#" class="btn btn-primary" (click)="adicionarAoCarrinho(produto)">Adicionar ao Carrinho</a>
               </div>
           </div>
       </div>

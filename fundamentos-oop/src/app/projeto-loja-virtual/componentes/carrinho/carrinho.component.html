@@ -1,4 +1,4 @@
-<div class="container mt-4">
+<div class="container mt-4" *ngIf="!compraFinalizada">
   <h2>Carrinho de Compras</h2>
   <div class="row">
       <div class="col-12">
@@ -10,22 +10,22 @@
                   </tr>
               </thead>
               <tbody>
-                  <tr>
-                      <td></td>
-                      <td></td>
+                  <tr *ngFor="let produto of produtosSelecionados">
+                      <td>{{ produto.nome }}</td>
+                      <td>{{ produto.preco | currency: "BRL" }}</td>
                   </tr>
               </tbody>
               <tfoot>
                   <tr>
-                      <td colspan="2">Total:</td>
+                      <td colspan="2">Total: {{ calcularTotal() | currency: "BRL" }}</td>
                   </tr>
               </tfoot>
           </table>
-          <button class="btn btn-primary float-right" >Finalizar Compra</button>
+          <button class="btn btn-primary float-right" (click)="finalizarCompra()">Finalizar Compra</button>
       </div>
   </div>
 </div>
 
-<div class="container" >
+<div class="container" *ngIf="compraFinalizada" >
   <!-- INSERIR COMPONENETE COMPRAS AQUI -->
 </div>
