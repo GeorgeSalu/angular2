@@ -1,7 +1,7 @@
 <div class="container mt-4">
   <h5 class="text-center text-success">Obrigado por comprar conosco!</h5>
 
-  <div class="row">
+  <div class="row" *ngFor="let transacao of getTransacoes">
       <div class="col-md-6 offset-md-3">
           <div class="card mt-3">
               <div class="card-header">
@@ -9,13 +9,13 @@
               </div>
               <div class="card-body">
                   <ul class="list-group">
-                      <li class="list-group-item">
-                          <strong>Produto:</strong><br>
-                          <strong>Preço: </strong>
+                      <li class="list-group-item" *ngFor="let produto of transacao.produtos">
+                          <strong>Produto: {{ produto.nome }}</strong><br>
+                          <strong>Preço: {{ produto.preco }}</strong>
                       </li>
                   </ul>
-                  <p class="mt-3"><strong>Total:</strong></p>
-                  <p><strong>Data da Compra:</strong></p>
+                  <p class="mt-3"><strong>Total:  {{ transacao.total | currency: "BRL" }}</strong></p>
+                  <p><strong>Data da Compra: {{ transacao.data | date: "dd/MM/yyyy" }} </strong></p>
               </div>
           </div>
       </div>
