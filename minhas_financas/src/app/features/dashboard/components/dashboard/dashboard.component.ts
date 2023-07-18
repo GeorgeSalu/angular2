@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DashboardService } from '../../service/dashboard.service';
+import { Entrada } from './models/entrada.mode';
 
 @Component({
   selector: 'app-dashboard',
@@ -24,6 +25,9 @@ export class DashboardComponent implements OnInit{
   ]
 
   entradas: any[] = [];
+  saldo = 0;
+  despesa = 0;
+  receita = 0;
 
   constructor(private dashboardService: DashboardService) {}
 
@@ -31,7 +35,30 @@ export class DashboardComponent implements OnInit{
     this.dashboardService.getEntradas()
       .subscribe(entradas => {
         this.entradas = entradas;
+        this.getReceitas()
+        this.getDespesas()
+        this.getSaldo()
       })
+  }
+
+  getReceitas() {
+    this.entradas.forEach((entrada: Entrada) => {
+      if(entrada.tipo === "receita") {
+        this.receita += parseInt(entrada.valor);
+      }
+    })
+  }
+
+  getDespesas() {
+    this.entradas.forEach((entrada: Entrada) => {
+      if(entrada.tipo === "despesa") {
+        this.despesa += parseInt(entrada.valor);
+      }
+    })
+  }
+
+  getSaldo() {
+    this.saldo = this.receita - this.despesa;
   }
 
 }
