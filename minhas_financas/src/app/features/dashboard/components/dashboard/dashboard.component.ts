@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { DashboardService } from '../../service/dashboard.service';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit{
 
   meses = [
     { value: 0, viewValue: 'Janeiro'},
@@ -21,5 +22,16 @@ export class DashboardComponent {
     { value: 10, viewValue: 'Novembro'},
     { value: 11, viewValue: 'Dezembro'}
   ]
+
+  entradas: any[] = [];
+
+  constructor(private dashboardService: DashboardService) {}
+
+  ngOnInit(): void {
+    this.dashboardService.getEntradas()
+      .subscribe(entradas => {
+        this.entradas = entradas;
+      })
+  }
 
 }
