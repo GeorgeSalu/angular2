@@ -13,6 +13,18 @@
       <td mat-cell *matCellDef="let element"> {{element.descricao}} </td>
     </ng-container>
 
+    <!-- Descricao Column -->
+    <ng-container matColumnDef="editar">
+      <th mat-header-cell *matHeaderCellDef> Editar </th>
+      <td mat-cell *matCellDef="let element"> <mat-icon (click)="chamarEdicao(element)" style="color: blue; cursor: pointer;">edit</mat-icon> </td>
+    </ng-container>
+
+    <!-- Descricao Column -->
+    <ng-container matColumnDef="excluir">
+      <th mat-header-cell *matHeaderCellDef> Excluir </th>
+      <td mat-cell *matCellDef="let element"> <mat-icon style="color: red; cursor: pointer;">delete</mat-icon> </td>
+    </ng-container>
+
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
