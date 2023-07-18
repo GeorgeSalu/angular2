@@ -3,7 +3,7 @@ import { CategoriaService } from '../../service/categoria.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { Router } from '@angular/router';
-import { Categorias } from '../../models/categoria.mode';
+import { Categoria } from '../../models/categoria.mode';
 
 @Component({
   selector: 'app-list',
@@ -12,8 +12,8 @@ import { Categorias } from '../../models/categoria.mode';
 })
 export class ListComponent implements OnInit, AfterViewInit{
   displayedColumns: string[] = ['nome', 'descricao', 'editar', 'excluir'];
-  dataSource = new MatTableDataSource<Categorias>();
-  categorias: Categorias[] = [];
+  dataSource = new MatTableDataSource<Categoria>();
+  categorias: Categoria[] = [];
 
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
@@ -23,7 +23,7 @@ export class ListComponent implements OnInit, AfterViewInit{
 
   ngOnInit(): void {
     this.categoriasService.getCategorias()
-    .subscribe((categorias: Categorias[]) => {
+    .subscribe((categorias: Categoria[]) => {
       this.categorias = categorias
       this.dataSource.data = this.categorias;
     })
@@ -33,7 +33,7 @@ export class ListComponent implements OnInit, AfterViewInit{
     this.dataSource.paginator = this.paginator;
   }
 
-  chamarEdicao(categoria: Categorias) {
+  chamarEdicao(categoria: Categoria) {
     this.router.navigate(['categorias','editar', categoria.id])
   }
 

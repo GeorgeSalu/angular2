@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoriaService } from '../../service/categoria.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Categorias } from '../../models/categoria.mode';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Categoria } from '../../models/categoria.mode';
 
 @Component({
   selector: 'app-formulario',
@@ -11,7 +11,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class FormularioComponent implements OnInit{
 
-  categoria!: Categorias;
+  categoria!: Categoria;
   id:string = "";
   formCategoria!: FormGroup;
 
@@ -25,7 +25,7 @@ export class FormularioComponent implements OnInit{
     this.id = this.activatedRoute.snapshot.url[1].path;
     this.criarFormulario();
     this.categoriasService.getCategoriasPeloId(parseInt(this.id))
-      .subscribe((categoria: Categorias) => {
+      .subscribe((categoria: Categoria) => {
         this.categoria = categoria;
         this.formCategoria.controls["nome"].setValue(categoria.nome);
         this.formCategoria.controls["descricao"].setValue(categoria.descricao)
