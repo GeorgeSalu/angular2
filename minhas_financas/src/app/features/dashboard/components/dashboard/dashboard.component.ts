@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DashboardService } from '../../service/dashboard.service';
-import { Entrada } from './models/entrada.mode';
+import { Entrada } from './models/entrada.model';
 
 @Component({
   selector: 'app-dashboard',
