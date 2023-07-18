@@ -11,7 +11,7 @@ export class HttpBaseService {
 
   private apiBase = "http://localhost:3000/";
 
-  constructor(private readonly injector: Injector) {
+  constructor(protected readonly injector: Injector) {
     if(injector === null || injector === undefined) {
       throw new Error("injector não pode ser nulo");
     }
