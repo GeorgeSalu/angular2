@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class HttpBaseService {
 
-  private readonly httpCliente!: HttpClient;
+  private readonly httpClient!: HttpClient;
 
   private apiBase = "http://localhost:3000";
 
@@ -15,22 +15,22 @@ export class HttpBaseService {
     if(injector === null || injector === undefined) {
       throw new Error("injector não pode ser nulo");
     }
-    this.httpCliente = injector.get(HttpClient);
+    this.httpClient = injector.get(HttpClient);
   }
 
   public httpGet(endpoint: string): Observable<any> {
-    return this.httpCliente.get(`${this.apiBase}${endpoint}`);
+    return this.httpClient.get(`${this.apiBase}${endpoint}`);
   }
 
   public httpPost(endpoint: string, dados: any): Observable<any> {
-    return this.httpCliente.post(`${this.apiBase}${endpoint}`, dados);
+    return this.httpClient.post(`${this.apiBase}${endpoint}`, dados);
   }
 
   public httpPut(endpoint: string, dados: any): Observable<any> {
-    return this.httpCliente.put(`${this.apiBase}${endpoint}`, dados);
+    return this.httpClient.put(`${this.apiBase}${endpoint}`, dados);
   }
 
   public httpDelete(endpoint: string): Observable<any> {
-    return this.httpCliente.delete(`${this.apiBase}${endpoint}`);
+    return this.httpClient.delete(`${this.apiBase}${endpoint}`);
   }
 }
