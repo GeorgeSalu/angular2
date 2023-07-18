@@ -1,10 +1,36 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { CategoriaService } from '../../service/categoria.service';
+import { MatTableDataSource } from '@angular/material/table';
+
+export interface Categorias {
+  nome: string;
+  descricao: number;
+  id: number;
+}
+
 
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.scss']
 })
-export class ListComponent {
+export class ListComponent implements OnInit, AfterViewInit{
+  displayedColumns: string[] = ['nome', 'descricao'];
+  dataSource = new MatTableDataSource<Categorias>();
+
+  categorias: Categorias[] = [];
+
+  constructor(private categoriasService: CategoriaService){}
+
+  ngOnInit(): void {
+    this.categoriasService.getCategorias()
+    .subscribe((categorias: Categorias[]) => {
+      this.categorias = categorias
+      this.dataSource.data = this.categorias;
+    })
+  }
+
+  ngAfterViewInit(): void {
+  }
 
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-toolbar',
@@ -7,10 +7,7 @@ import { Component } from '@angular/core';
 })
 export class ToolbarComponent {
 
-  menu: any [] = [
-    { descricao: "Dashborad", rota: "dashboard" },
-    { descricao: "Categorias", rota: "categorias" },
-    { descricao: "Entradas", rota: "entradas" }
-  ]
+  @Input()
+  menu!: any [];
 
 }
