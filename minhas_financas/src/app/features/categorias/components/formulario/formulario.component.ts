@@ -39,4 +39,23 @@ export class FormularioComponent implements OnInit{
     })
   }
 
+  salvarCategoria() {
+    if(this.formCategoria.touched && this.formCategoria.dirty) {
+
+      const payload = {
+        id: this.categoria.id,
+        nome: this.formCategoria.controls['nome'].value,
+        descricao: this.formCategoria.controls['descricao'].value
+      }
+
+      this.categoriasService.alterarCategorias(payload)
+        .subscribe(resposta => {
+
+          this.router.navigate(['categorias']);
+
+        })
+
+    }
+  }
+
 }
