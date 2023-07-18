@@ -15,7 +15,7 @@ export class HttpBaseService {
     if(injector === null || injector === undefined) {
       throw new Error("injector não pode ser nulo");
     }
-    this.httpCliente = injector.get(this.httpCliente);
+    this.httpCliente = injector.get(HttpClient);
   }
 
   public httpGet(endpoint: string): Observable<any> {
