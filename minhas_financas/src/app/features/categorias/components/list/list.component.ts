@@ -1,6 +1,7 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { CategoriaService } from '../../service/categoria.service';
 import { MatTableDataSource } from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
 
 export interface Categorias {
   nome: string;
@@ -17,8 +18,10 @@ export interface Categorias {
 export class ListComponent implements OnInit, AfterViewInit{
   displayedColumns: string[] = ['nome', 'descricao'];
   dataSource = new MatTableDataSource<Categorias>();
-
   categorias: Categorias[] = [];
+
+  @ViewChild(MatPaginator)
+  paginator!: MatPaginator;
 
   constructor(private categoriasService: CategoriaService){}
 
@@ -31,6 +34,7 @@ export class ListComponent implements OnInit, AfterViewInit{
   }
 
   ngAfterViewInit(): void {
+    this.dataSource.paginator = this.paginator;
   }
 
 }
