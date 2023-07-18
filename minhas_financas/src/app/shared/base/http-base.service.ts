@@ -27,10 +27,10 @@ export class HttpBaseService {
   }
 
   public httpPut(endpoint: string, dados: any): Observable<any> {
-    return this.httpCliente.get(`${this.apiBase}${endpoint}`, dados);
+    return this.httpCliente.put(`${this.apiBase}${endpoint}`, dados);
   }
 
   public httpDelete(endpoint: string): Observable<any> {
-    return this.httpCliente.get(`${this.apiBase}${endpoint}`);
+    return this.httpCliente.delete(`${this.apiBase}${endpoint}`);
   }
 }
