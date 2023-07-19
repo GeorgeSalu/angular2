@@ -74,7 +74,7 @@ export class FormularioComponent implements OnInit{
   }
 
   editarCategoria(payload: Categoria) {
-    this.categoriasService.alterarCategorias(payload)
+    this.categoriasService.alterarCategoria(payload)
     .subscribe(resposta => {
       // retornar a tela anterior
       this.router.navigate(['categorias']);

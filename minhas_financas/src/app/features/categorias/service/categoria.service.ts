@@ -22,7 +22,7 @@ export class CategoriaService extends HttpBaseService {
     return this.httpGet(`${this.endpoint}/${id}`);
   }
 
-  alterarCategorias(payload: Categoria): Observable<any> {
+  alterarCategoria(payload: Categoria): Observable<any> {
     return this.httpPut(`${this.endpoint}/${payload.id}`, payload);
   }
 
