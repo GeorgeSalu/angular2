@@ -22,6 +22,10 @@ export class ListComponent implements OnInit, AfterViewInit{
               private router: Router){}
 
   ngOnInit(): void {
+    this.buscarCategorias()
+  }
+
+  buscarCategorias() {
     this.categoriasService.getCategorias()
     .subscribe((categorias: Categoria[]) => {
       this.categorias = categorias
@@ -35,6 +39,17 @@ export class ListComponent implements OnInit, AfterViewInit{
 
   chamarEdicao(categoria: Categoria) {
     this.router.navigate(['categorias','editar', categoria.id])
+  }
+
+  excluir(id: number) {
+    this.categoriasService.excluirCategoria(id)
+    .subscribe(resposta => {
+      this.buscarCategorias();
+    })
+  }
+
+  novaCategoria() {
+    this.router.navigate(["categorias", "nova-categoria"])
   }
 
 }

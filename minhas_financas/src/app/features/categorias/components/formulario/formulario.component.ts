@@ -14,6 +14,8 @@ export class FormularioComponent implements OnInit{
   categoria!: Categoria;
   id:string = "";
   formCategoria!: FormGroup;
+  rota: string = "";
+  eUmNovoFormulario: boolean = false;
 
   constructor(private categoriasService: CategoriaService,
               private router: Router,
@@ -22,8 +24,22 @@ export class FormularioComponent implements OnInit{
 
 
   ngOnInit(): void {
-    this.id = this.activatedRoute.snapshot.url[1].path;
+
+    this.rota = this.activatedRoute.snapshot.url[0].path;
     this.criarFormulario();
+
+    if(this.rota === "editar") {
+
+      this.id = this.activatedRoute.snapshot.url[1].path;
+      this.buscarCAtegoriaPeloId();
+
+    } else {
+      this.eUmNovoFormulario = true;
+    }
+
+  }
+
+  buscarCAtegoriaPeloId() {
     this.categoriasService.getCategoriasPeloId(parseInt(this.id))
       .subscribe((categoria: Categoria) => {
         this.categoria = categoria;
@@ -42,20 +58,35 @@ export class FormularioComponent implements OnInit{
   salvarCategoria() {
     if(this.formCategoria.touched && this.formCategoria.dirty) {
 
-      const payload = {
-        id: this.categoria.id,
+      const payload: Categoria = {
         nome: this.formCategoria.controls['nome'].value,
         descricao: this.formCategoria.controls['descricao'].value
       }
 
-      this.categoriasService.alterarCategorias(payload)
-        .subscribe(resposta => {
-
-          this.router.navigate(['categorias']);
-
-        })
+      if(this.eUmNovoFormulario) {
+        this.criarCategoria(payload)
+      } else {
+        payload.id = this.categoria.id;
+        this.editarCategoria(payload)
+      }
 
     }
+  }
+
+  editarCategoria(payload: Categoria) {
+    this.categoriasService.alterarCategorias(payload)
+    .subscribe(resposta => {
+      // retornar a tela anterior
+      this.router.navigate(['categorias']);
+    })
+  }
+
+  criarCategoria(payload: Categoria) {
+    this.categoriasService.criarCategorias(payload)
+    .subscribe(resposta => {
+      // retornar a tela anterior
+      this.router.navigate(['categorias']);
+    })
   }
 
 }
