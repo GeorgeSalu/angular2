@@ -82,7 +82,7 @@ export class FormularioComponent implements OnInit{
   }
 
   criarCategoria(payload: Categoria) {
-    this.categoriasService.criarCategorias(payload)
+    this.categoriasService.criarCategoria(payload)
     .subscribe(resposta => {
       // retornar a tela anterior
       this.router.navigate(['categorias']);
