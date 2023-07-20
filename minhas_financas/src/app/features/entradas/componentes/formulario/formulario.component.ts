@@ -3,7 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Categoria } from 'src/app/features/categorias/models/categoria.mode';
 import { CategoriaService } from 'src/app/features/categorias/service/categoria.service';
 import { EntradasService } from '../../service/entradas.service';
-
+import * as dayjs from 'dayjs'
+import { Entrada } from '../../models/entrada.model';
 
 @Component({
   selector: 'app-formulario',
@@ -53,7 +54,22 @@ export class FormularioComponent implements OnInit{
   }
 
   salvarEntrada() {
-    this.entradaService.criarEntrada(this.formEntradas.getRawValue())
+    const data = dayjs(this.formEntradas.controls['data'].value).format("DD/MM/YYYY");
+
+    const payloadRequest: Entrada = Object.assign('', this.formEntradas.getRawValue());
+
+    payloadRequest.data = data;
+
+    const payload: Entrada = {
+      nome: payloadRequest.nome,
+      categoriaId: payloadRequest.categoriaId,
+      data: payloadRequest.data,
+      pago: payloadRequest.pago,
+      tipo: payloadRequest.tipo,
+      valor: payloadRequest.valor
+    }
+
+    this.entradaService.criarEntrada(payload)
     .subscribe(resposta => {
       console.log("ok")
     })
