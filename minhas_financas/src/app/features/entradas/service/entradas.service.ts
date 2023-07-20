@@ -17,4 +17,8 @@ export class EntradasService extends HttpBaseService{
     return this.httpGet(`${this.endpoint}`)
   }
 
+  excluirEntrada(id: number): Observable<any> {
+    return this.httpDelete(`${this.endpoint}/${id}`)
+  }
+
 }
