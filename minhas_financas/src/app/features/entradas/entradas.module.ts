@@ -5,7 +5,7 @@ import { EntradasRoutingModule } from './entradas-routing.module';
 import { ListComponent } from './componentes/list/list.component';
 import { FormularioComponent } from './componentes/formulario/formulario.component';
 import { MaterialModule } from 'src/app/shared/material/material.module';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { StatusPipe } from './pipes/status.pipe';
 
 
@@ -19,7 +19,6 @@ import { StatusPipe } from './pipes/status.pipe';
     CommonModule,
     EntradasRoutingModule,
     MaterialModule,
-    FormsModule,
     ReactiveFormsModule
   ]
 })
