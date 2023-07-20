@@ -38,7 +38,7 @@
       "categoriaId": 1,
       "pago": true,
       "data": "14/03/2023",
-      "valor": 70.80,
+      "valor": 70.8,
       "tipo": "despesa"
     },
     {
@@ -56,7 +56,7 @@
       "categoriaId": 3,
       "pago": true,
       "data": "16/03/2023",
-      "valor": 15.00,
+      "valor": 15,
       "tipo": "despesa"
     },
     {
@@ -65,7 +65,7 @@
       "categoriaId": 3,
       "pago": false,
       "data": "17/03/2023",
-      "valor": 15.00,
+      "valor": 15,
       "tipo": "despesa"
     },
     {
@@ -74,7 +74,7 @@
       "categoriaId": 3,
       "pago": false,
       "data": "23/03/2023",
-      "valor": 15.00,
+      "valor": 15,
       "tipo": "despesa"
     },
     {
@@ -83,7 +83,7 @@
       "categoriaId": 5,
       "pago": true,
       "data": "25/03/2023",
-      "valor": 2980.00,
+      "valor": 2980,
       "tipo": "receita"
     },
     {
@@ -92,7 +92,7 @@
       "categoriaId": 3,
       "pago": false,
       "data": "07/04/2023",
-      "valor": 15.00,
+      "valor": 15,
       "tipo": "despesa"
     },
     {
@@ -101,7 +101,7 @@
       "categoriaId": 3,
       "pago": true,
       "data": "18/04/2023",
-      "valor": 15.00,
+      "valor": 15,
       "tipo": "despesa"
     },
     {
@@ -110,8 +110,17 @@
       "categoriaId": 3,
       "pago": true,
       "data": "28/04/2023",
-      "valor": 15.00,
+      "valor": 15,
       "tipo": "despesa"
+    },
+    {
+      "nome": "jogo novo",
+      "valor": "99",
+      "categoriaId": 3,
+      "pago": true,
+      "tipo": "Despesa",
+      "data": "2023-07-20T17:25:03.581Z",
+      "id": 45
     }
   ]
 }
