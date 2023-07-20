@@ -9,7 +9,6 @@ import { ToolbarComponent } from './common/componentes/toolbar/toolbar.component
 import { MaterialModule } from './shared/material/material.module';
 
 import { LOCALE_ID } from "@angular/core"
-import localePt from "@angular/common/locales/pt"
 
 @NgModule({
   declarations: [
