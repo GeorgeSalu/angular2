@@ -1,4 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
+import { Entrada } from '../../models/entrada.model';
+import { MatPaginator } from '@angular/material/paginator';
+import { EntradasService } from '../../service/entradas.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list',
@@ -6,5 +11,43 @@ import { Component } from '@angular/core';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent {
+
+  displayedColumns: string[] = ['nome', 'pago', 'data', 'valor', 'tipo', 'editar','excluir'];
+  dataSource = new MatTableDataSource<Entrada>();
+  entradas: Entrada[] = [];
+
+  @ViewChild(MatPaginator)
+  paginator!: MatPaginator;
+
+  constructor(private entradaService: EntradasService,
+              private router: Router){}
+
+  ngOnInit(): void {
+    this.buscarEntradas()
+  }
+
+  buscarEntradas() {
+    this.entradaService.getEntradas()
+    .subscribe((entradass: Entrada[]) => {
+      this.entradas = entradass;
+      this.dataSource.data = this.entradas;
+    })
+  }
+
+  ngAfterViewInit(): void {
+    this.dataSource.paginator = this.paginator;
+  }
+
+  chamarEdicao(entrada: Entrada) {
+    this.router.navigate(['entradas','editar', entrada.id])
+  }
+
+  excluir(id: number) {
+
+  }
+
+  novaEntrada() {
+    this.router.navigate(["entradas", "nova-entrada"])
+  }
 
 }

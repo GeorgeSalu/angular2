@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { EntradasRoutingModule } from './entradas-routing.module';
 import { ListComponent } from './componentes/list/list.component';
 import { FormularioComponent } from './componentes/formulario/formulario.component';
+import { MaterialModule } from 'src/app/shared/material/material.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,7 +15,9 @@ import { FormularioComponent } from './componentes/formulario/formulario.compone
   ],
   imports: [
     CommonModule,
-    EntradasRoutingModule
+    EntradasRoutingModule,
+    MaterialModule,
+    ReactiveFormsModule
   ]
 })
 export class EntradasModule { }
