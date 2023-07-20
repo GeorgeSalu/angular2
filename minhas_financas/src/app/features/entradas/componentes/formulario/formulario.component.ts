@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./formulario.component.scss']
 })
 export class FormularioComponent {
-
+  foods: any[] = [
+    {value: "valor 1", viewValue: "view 1"}
+  ]
 }
