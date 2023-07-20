@@ -9,6 +9,10 @@ import { ToolbarComponent } from './common/componentes/toolbar/toolbar.component
 import { MaterialModule } from './shared/material/material.module';
 
 import { LOCALE_ID } from "@angular/core"
+import { registerLocaleData } from '@angular/common';
+import localePt from "@angular/common/locales/pt"
+
+registerLocaleData(localePt);
 
 @NgModule({
   declarations: [
@@ -23,7 +27,7 @@ import { LOCALE_ID } from "@angular/core"
     MaterialModule
   ],
   providers: [
-    {provide: LOCALE_ID, useValue: "pt-BR"}
+    {provide: LOCALE_ID, useValue: 'pt-PT'}
   ],
   bootstrap: [AppComponent]
 })
