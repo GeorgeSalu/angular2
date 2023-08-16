@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { WeatherService } from '../../services/weather.service';
+import { WeatherDatas } from 'src/app/models/interfaces/WeatherDatas';
 
 @Component({
   selector: 'app-weather-home',
@@ -9,7 +10,7 @@ import { WeatherService } from '../../services/weather.service';
 export class WeatherHomeComponent implements OnInit {
 
   initialCityName = "São Paulo"
-  weatherDatas!: any;
+  weatherDatas!: WeatherDatas;
 
   constructor(private weatherService: WeatherService) {}
 
