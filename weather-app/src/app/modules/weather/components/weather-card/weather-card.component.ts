@@ -9,6 +9,7 @@ import { WeatherDatas } from 'src/app/models/interfaces/WeatherDatas';
 })
 export class WeatherCardComponent {
 
+  // dados vindos do componente pai
   @Input()
   weatherDatasInput!: WeatherDatas;
 
