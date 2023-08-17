@@ -1,4 +1,4 @@
-## Angular 2+ 
+## Angular 2+(14+) 
 
 #### O que você aprenderá?
 
