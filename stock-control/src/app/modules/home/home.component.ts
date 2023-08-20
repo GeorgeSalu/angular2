@@ -70,7 +70,7 @@ export class HomeComponent {
               this.messageService.add({
                 severity: 'success',
                 summary: 'Sucesso',
-                detail: `Usuario criado com sucesso`,
+                detail: `Usuário criado com sucesso!`,
                 life: 2000
               })
             }
@@ -80,7 +80,7 @@ export class HomeComponent {
             this.messageService.add({
               severity: 'error',
               summary: 'Erro',
-              detail: `Error ao criar usuario`,
+              detail: `Error ao criar usuário!`,
               life: 2000
             })
           }
