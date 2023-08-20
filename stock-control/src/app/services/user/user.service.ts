@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { SignupUserRequest } from 'src/app/models/interfaces/user/SignupUserRequest';
 import { SignupUserResponse } from 'src/app/models/interfaces/user/SignupUserResponse';
+import { AuthRequest } from 'src/app/models/interfaces/user/auth/AuthRequest';
+import { AuthResponse } from 'src/app/models/interfaces/user/auth/AuthResponse';
 import { envinment } from 'src/environments/environment';
 
 @Injectable({
@@ -20,5 +22,8 @@ export class UserService {
     )
   }
 
+  authUser(requestDatas: AuthRequest): Observable<AuthResponse> {
+    return this.http.post<AuthResponse>(`${this.API_URL}/auth`, requestDatas);
+  }
 
 }
