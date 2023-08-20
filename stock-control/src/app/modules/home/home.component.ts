@@ -59,7 +59,7 @@ export class HomeComponent {
     }
   }
 
-  onSubmitSugnupForm(): void {
+  onSubmitSignupForm(): void {
     if(this.signupForm.value && this.signupForm.valid) {
       this.userService.signupUser(this.signupForm.value as SignupUserRequest)
         .subscribe({
