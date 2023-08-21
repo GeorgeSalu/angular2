@@ -13,6 +13,7 @@ import { RouterModule } from '@angular/router';
 import { DASHBOARD_ROUTES } from './dashboard.routing';
 import { MessageService } from 'primeng/api';
 import { CookieService } from 'ngx-cookie-service';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 
@@ -30,7 +31,9 @@ import { CookieService } from 'ngx-cookie-service';
     ButtonModule,
     ToolbarModule,
     ToastModule,
-    CardModule
+    CardModule,
+
+    SharedModule
   ],
   providers: [MessageService, CookieService]
 })
