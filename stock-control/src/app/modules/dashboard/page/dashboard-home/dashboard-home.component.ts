@@ -18,7 +18,7 @@ export class DashboardHomeComponent implements OnInit, OnDestroy {
 
   constructor(private productService: ProductsService,
               private messageService: MessageService,
-              private produtsDtService: ProductsDataTransferService) {}
+              private productsDtService: ProductsDataTransferService) {}
 
   ngOnInit(): void {
     this.getProductsDatas();
@@ -34,7 +34,7 @@ export class DashboardHomeComponent implements OnInit, OnDestroy {
         next: (response) => {
           if(response.length > 0) {
             this.productsList = response;
-            this.produtsDtService.setProductsDatas(this.productsList)
+            this.productsDtService.setProductsDatas(this.productsList)
           }
         },
         error: (err) => {
