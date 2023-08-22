@@ -36,7 +36,7 @@ export class DashboardHomeComponent implements OnInit {
           this.messageService.add({
             severity: 'error',
             summary: 'Erro',
-            detail: 'Erro ao buscar produtos',
+            detail: 'Erro ao buscar produtos!',
             life: 2500,
           })
         }
