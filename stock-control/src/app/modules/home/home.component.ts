@@ -52,7 +52,7 @@ export class HomeComponent implements OnDestroy {
                 severity: 'success',
                 summary: 'Sucesso',
                 detail: `Bem vindo de volta ${response?.name}`,
-                life: 2000
+                life: 2500
               })
             }
           },
@@ -61,7 +61,7 @@ export class HomeComponent implements OnDestroy {
               severity: 'error',
               summary: 'Erro',
               detail: `Error ao fazer login`,
-              life: 2000
+              life: 2500
             })
           }
         })
@@ -83,7 +83,7 @@ export class HomeComponent implements OnDestroy {
                 severity: 'success',
                 summary: 'Sucesso',
                 detail: `Usuário criado com sucesso!`,
-                life: 2000
+                life: 2500
               })
             }
 
@@ -93,7 +93,7 @@ export class HomeComponent implements OnDestroy {
               severity: 'error',
               summary: 'Erro',
               detail: `Error ao criar usuário!`,
-              life: 2000
+              life: 2500
             })
           }
         })
