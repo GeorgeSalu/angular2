@@ -1,5 +1,6 @@
 import { GetAllProductsResponse } from './../../../../models/interfaces/products/response/GetAllProductsResponse';
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ChartData, ChartOptions } from 'chart.js';
 import { MessageService } from 'primeng/api';
 import { takeUntil } from 'rxjs';
 import { Subject } from 'rxjs/internal/Subject';
@@ -15,6 +16,9 @@ export class DashboardHomeComponent implements OnInit, OnDestroy {
 
   private destroy$ = new Subject<void>();
   public productsList: Array<GetAllProductsResponse> = [];
+
+  public productsCharDatas!: ChartData;
+  public productsChartOptions!: ChartOptions;
 
   constructor(private productService: ProductsService,
               private messageService: MessageService,
@@ -47,6 +51,30 @@ export class DashboardHomeComponent implements OnInit, OnDestroy {
           })
         }
       })
+  }
+
+  setProductsChartConfig(): void {
+    const documentStyle = getComputedStyle(document.documentElement);
+    const textColor = documentStyle.getPropertyValue('--text-color');
+    const textColorSecondary = documentStyle.getPropertyValue(
+      '--text-color-secondary'
+    );
+    const surfaceBorder = documentStyle.getPropertyValue('--surface-border');
+
+    this.productsCharDatas = {
+      labels: this.productsList.map((element) => element?.name),
+      datasets: [
+        {
+          label: 'Quantidade',
+          backgroundColor: documentStyle.getPropertyValue('--indigo-400'),
+          borderColor: documentStyle.getPropertyValue('--indigo-400'),
+          hoverBackgroundColor: documentStyle.getPropertyValue('--indigo-400'),
+          data: this.productsList.map((element) => element?.amount)
+        },
+      ],
+    };
+
+
   }
 
   ngOnDestroy(): void {
