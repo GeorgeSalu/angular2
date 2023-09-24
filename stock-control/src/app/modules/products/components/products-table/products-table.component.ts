@@ -1,3 +1,4 @@
+import { GetAllProductsResponse } from 'src/app/models/interfaces/products/response/GetAllProductsResponse';
 import { Component, Input } from '@angular/core';
 
 @Component({
@@ -7,4 +8,8 @@ import { Component, Input } from '@angular/core';
 })
 export class ProductsTableComponent {
 
+  @Input()
+  products: Array<GetAllProductsResponse> = [];
+
+  public productSelected!: GetAllProductsResponse
 }
