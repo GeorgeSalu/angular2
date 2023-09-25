@@ -67,6 +67,12 @@ export class ProductsHomeComponent implements OnDestroy, OnInit {
     }
   }
 
+  handleDeleteProductAction(event: {product_id: string, productName: string}): void {
+    if(event) {
+      console.log('dados recebidos do evento de deletar produto', event)
+    }
+  }
+
   ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();
