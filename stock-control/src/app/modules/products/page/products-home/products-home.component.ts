@@ -68,6 +68,7 @@ export class ProductsHomeComponent implements OnDestroy, OnInit {
   }
 
   ngOnDestroy(): void {
-
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 }
