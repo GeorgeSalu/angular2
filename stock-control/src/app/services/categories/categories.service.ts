@@ -26,7 +26,8 @@ export class CategoriesService {
 
   getAllCategories(): Observable<Array<GetAllCategoriesResponse>> {
     return this.http.get<Array<GetAllCategoriesResponse>>(
-      `${this.API_URL}/categories`
+      `${this.API_URL}/categories`,
+      this.httpOptions
     )
   }
 
