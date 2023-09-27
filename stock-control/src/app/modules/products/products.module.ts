@@ -9,6 +9,7 @@ import { TableModule } from 'primeng/table';
 import { InputMaskModule } from 'primeng/inputmask';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { InputTextareaModule } from 'primeng/inputtextarea';
+import { InputTextModule } from 'primeng/inputtext';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { DialogService, DynamicDialogModule } from 'primeng/dynamicdialog';
 import { DropdownModule } from 'primeng/dropdown';
@@ -42,6 +43,7 @@ import { ProductFormComponent } from './components/product-form/product-form.com
     InputMaskModule,
     InputSwitchModule,
     InputTextareaModule,
+    InputTextModule,
     InputNumberModule,
     DynamicDialogModule,
     DropdownModule,
