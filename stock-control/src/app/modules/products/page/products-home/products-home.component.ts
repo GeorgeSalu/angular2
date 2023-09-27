@@ -99,7 +99,13 @@ export class ProductsHomeComponent implements OnDestroy, OnInit {
           }
         },
         error: (err) => {
-          console.log(err)
+          console.log(err);
+          this.messageService.add({
+            severity: 'error',
+            summary: 'Erro',
+            detail: 'Erro ao remover produto!',
+            life: 2500
+          })
         }
       })
     }
