@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
+import { Subject, takeUntil } from 'rxjs';
 import { GetAllCategoriesResponse } from 'src/app/models/interfaces/categories/response/GetCategoriesResponse';
 import { CategoriesService } from 'src/app/services/categories/categories.service';
 
@@ -12,6 +13,7 @@ import { CategoriesService } from 'src/app/services/categories/categories.servic
 })
 export class ProductFormComponent implements OnInit, OnDestroy {
 
+  private readonly destroy$: Subject<void> = new Subject();
   public categoriesDatas: Array<GetAllCategoriesResponse> = [];
   public selectedCategory: Array<{ name: string, code: string }> = [];
   public addProductForm = this.formBuilder.group({
@@ -35,6 +37,7 @@ export class ProductFormComponent implements OnInit, OnDestroy {
 
   getAllCategories(): void {
     this.categoriesService.getAllCategories()
+    .pipe(takeUntil(this.destroy$))
     .subscribe({
       next: (response) => {
         if(response.length > 0) {
@@ -47,7 +50,8 @@ export class ProductFormComponent implements OnInit, OnDestroy {
   handleSubmitAddProduct(): void {}
 
   ngOnDestroy(): void {
-    throw new Error('Method not implemented.');
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 
 
