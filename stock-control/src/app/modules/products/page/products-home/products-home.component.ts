@@ -71,8 +71,8 @@ export class ProductsHomeComponent implements OnDestroy, OnInit {
   handleDeleteProductAction(event: {product_id: string, productName: string}): void {
     if(event) {
       this.confirmationService.confirm({
-        message: `Confirma a exclusao do produto: ${event?.productName}`,
-        header: 'Confirmacao de exclusao',
+        message: `Confirma a exclusão do produto: ${event?.productName}`,
+        header: 'Confirmação de exclusão',
         icon: 'pi pi-exclamation-triangle',
         acceptLabel: 'Sim',
         rejectLabel: 'Não',
