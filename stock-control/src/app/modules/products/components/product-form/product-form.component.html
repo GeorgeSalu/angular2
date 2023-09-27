@@ -3,7 +3,7 @@
   <form [formGroup]="addProductForm" (ngSubmit)="handleSubmitAddProduct()">
     <div class="card flex flex-column md:flex-column gap-3">
       <!-- nome do produto-->
-      <input pInputText placeholder="Nome" formControlName="name" >
+      <input pInputText placeholder="Nome" formControlName="name" />
       <!-- cateogias de produtos -->
       <p-dropdown
         styleClass="w-full"
@@ -15,13 +15,13 @@
         formControlName="category_id"
       ></p-dropdown>
       <!-- preco do produto-->
-      <input pInputText placeholder="Preço" formControlName="price" >
+      <input pInputText placeholder="Preço" formControlName="price" />
 
       <!-- descricao do produto-->
-      <input pInputText placeholder="Descrição" formControlName="description" >
+      <input pInputText placeholder="Descrição" formControlName="description" />
 
       <!-- Quantidade do produto-->
-      <input pInputText placeholder="Quantidade" formControlName="amount" >
+      <input pInputText placeholder="Quantidade" formControlName="amount" />
 
       <div class="flex flex-row justify-content-center align-content-center align-items-center m-1">
         <p-button
