@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
 import { ProductsService } from 'src/app/services/products/products.service';
 import { ProductsDataTransferService } from 'src/app/shared/services/products/products-data-transfer.service';
-import { MessageService } from 'primeng/api';
+import { ConfirmationService, MessageService } from 'primeng/api';
 import { EventAction } from 'src/app/models/interfaces/products/event/EventAction';
 
 @Component({
@@ -21,7 +21,8 @@ export class ProductsHomeComponent implements OnDestroy, OnInit {
     private productsService: ProductsService,
     private productsDtService: ProductsDataTransferService,
     private router: Router,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private confirmationService: ConfirmationService
   ){}
 
   ngOnInit(): void {
@@ -69,7 +70,38 @@ export class ProductsHomeComponent implements OnDestroy, OnInit {
 
   handleDeleteProductAction(event: {product_id: string, productName: string}): void {
     if(event) {
-      console.log('dados recebidos do evento de deletar produto', event)
+      this.confirmationService.confirm({
+        message: `Confirma a exclusao do produto: ${event?.productName}`,
+        header: 'Confirmacao de exclusao',
+        icon: 'pi pi-exclamation-triangle',
+        acceptLabel: 'Sim',
+        rejectLabel: 'Não',
+        accept: () => this.deleteProduct(event?.product_id),
+      })
+    }
+  }
+
+  deleteProduct(product_id: string) {
+    if(product_id) {
+      this.productsService.deleteProduct(product_id)
+      .pipe(takeUntil(this.destroy$))
+      .subscribe({
+        next: (response) => {
+          if(response) {
+            this.messageService.add({
+              severity: 'success',
+              summary: 'Sucesso',
+              detail: 'Produto removido com sucesso',
+              life: 2500,
+            });
+
+            this.getAPIProductsDatas();
+          }
+        },
+        error: (err) => {
+          console.log(err)
+        }
+      })
     }
   }
 
