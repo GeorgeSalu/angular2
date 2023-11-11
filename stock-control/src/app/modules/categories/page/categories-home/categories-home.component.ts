@@ -60,12 +60,12 @@ export class CategoriesHomeComponent implements OnInit, OnDestroy {
         icon: 'pi pi-exclamation-triangle',
         acceptLabel: 'Sim',
         rejectLabel: 'Não',
-        accept: () => this.deleteCatory(event?.category_id)
+        accept: () => this.deleteCategory(event?.category_id)
       })
     }
   }
 
-  deleteCatory(category_id: string) {
+  deleteCategory(category_id: string) {
     if(category_id) {
       this.categoriesService.deleteCategory({ category_id })
         .pipe(takeUntil(this.destroy$))
