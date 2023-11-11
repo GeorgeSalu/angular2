@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { DialogService } from 'primeng/dynamicdialog';
 import { Subject, takeUntil } from 'rxjs';
+import { DeleteCategoryAction } from 'src/app/models/interfaces/categories/event/DeleteCategoryAction';
 import { GetAllCategoriesResponse } from 'src/app/models/interfaces/categories/response/GetCategoriesResponse';
 import { CategoriesService } from 'src/app/services/categories/categories.service';
 
@@ -49,6 +50,47 @@ export class CategoriesHomeComponent implements OnInit, OnDestroy {
           this.router.navigate(['/dashboard'])
         }
       })
+  }
+
+  handleDeleteCategoryAction(event: DeleteCategoryAction): void {
+    if(event) {
+      this.confirmationService.confirm({
+        message: `Confirma a exclusao da cetgoria: ${event?.categoryName}`,
+        header: 'Confirmacao de exclusao',
+        icon: 'pi pi-exclamation-triangle',
+        acceptLabel: 'Sim',
+        rejectLabel: 'Não',
+        accept: () => this.deleteCatory(event?.category_id)
+      })
+    }
+  }
+
+  deleteCatory(category_id: string) {
+    if(category_id) {
+      this.categoriesService.deleteCategory({ category_id })
+        .pipe(takeUntil(this.destroy$))
+        .subscribe({
+          next: (response) => {
+            this.messageService.add({
+              severity: 'success',
+              summary: 'Sucesso',
+              detail: 'Categoria removida com sucesso',
+              life: 3000
+            });
+            this.getAllCategories();
+          },
+          error: (err) => {
+            console.log(err);
+            this.messageService.add({
+              severity: 'error',
+              summary: 'Erro',
+              detail: 'Erro ao remover categoria',
+              life: 3000
+            });
+            this.getAllCategories()
+          }
+        })
+    }
   }
 
   ngOnDestroy(): void {

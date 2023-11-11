@@ -69,6 +69,7 @@
               pRipple
               icon="pi pi-trash"
               class="p-button-rouded p-button-danger"
+              (click)="handleDeleteCategoryEvent(category?.id, category?.name)"
             >
             </button>
           </div>
