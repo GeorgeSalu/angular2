@@ -71,7 +71,7 @@ export class CategoryFormComponent implements OnInit, OnDestroy {
             this.messageService.add({
               severity: 'success',
               summary: 'Sucesso',
-              detail: 'Categorya editada com sucesso',
+              detail: 'Categoria editada com sucesso',
               life: 3000,
             });
           },
