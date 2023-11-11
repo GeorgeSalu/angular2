@@ -13,7 +13,6 @@ import { CategoriesService } from 'src/app/services/categories/categories.servic
 export class CategoryFormComponent implements OnInit, OnDestroy {
   private readonly destroy$: Subject<void> = new Subject();
 
-
   constructor(
     private ref: DynamicDialogRef,
     private formBuilder: FormBuilder,
