@@ -24,10 +24,6 @@ export class CategoriesHomeComponent implements OnInit, OnDestroy {
     private router: Router
   ) {}
 
-  ngOnDestroy(): void {
-    throw new Error('Method not implemented.');
-  }
-
   ngOnInit(): void {
     this.getAllCategories();
   }
@@ -53,6 +49,11 @@ export class CategoriesHomeComponent implements OnInit, OnDestroy {
           this.router.navigate(['/dashboard'])
         }
       })
+  }
+
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 
 }
