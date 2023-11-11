@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { MessageService } from 'primeng/api';
-import { DynamicDialogRef } from 'primeng/dynamicdialog';
+import { DynamicDialogConfig, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { Subject, takeUntil } from 'rxjs';
 import { CategoryEvent } from 'src/app/models/enums/categories/CategoryEvent';
 import { EditCategoryAction } from 'src/app/models/interfaces/categories/event/EditCategoryAction';
@@ -24,14 +24,68 @@ export class CategoryFormComponent implements OnInit, OnDestroy {
   })
 
   constructor(
-    private ref: DynamicDialogRef,
+    private ref: DynamicDialogConfig,
     private formBuilder: FormBuilder,
     private messageService: MessageService,
     private categoriesService: CategoriesService
   ){}
 
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    this.categoryAction = this.ref.data;
+
+    if(this.categoryAction?.event?.action == this.editCategoryAction && this.categoryAction?.event?.categoryName !== null || undefined) {
+      this.setCategoryName(this.categoryAction?.event?.categoryName as string);
+    }
+
+  }
+
+  handleSubmitCategoryAction(): void {
+    if(this.categoryAction?.event?.action === this.addCategoryAction) {
+      this.handleSubmitAddCategory();
+    } else if(this.categoryAction?.event?.action === this.editCategoryAction) {
+      this.handleSubmitEditCategory();
+    }
+    return;
+  }
+
+  setCategoryName(categoryName: string) {
+    if(categoryName) {
+      this.categoryForm.setValue({
+        name: categoryName
+      })
+    }
+  }
+
+  handleSubmitEditCategory(): void {
+    if(this.categoryForm?.value && this.categoryForm?.valid && this.categoryAction?.event?.id) {
+      const requestEditCategory: { name: string, category_id: string } = {
+        name: this.categoryForm?.value?.name as string,
+        category_id: this.categoryAction?.event?.id
+      }
+
+      this.categoriesService.editCategoryName(requestEditCategory)
+        .pipe(takeUntil(this.destroy$))
+        .subscribe({
+          next: () => {
+            this.categoryForm.reset();
+            this.messageService.add({
+              severity: 'success',
+              summary: 'Sucesso',
+              detail: 'Categorya editada com sucesso',
+              life: 3000,
+            });
+          },
+          error: (err) => {
+            this.categoryForm.reset();
+            this.messageService.add({
+              severity: 'error',
+              summary: 'Erro',
+              detail: 'Erro ao editar categoria',
+              life: 3000,
+            });
+          }
+        })
+    }
   }
 
   handleSubmitAddCategory(): void {
