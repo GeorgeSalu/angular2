@@ -10,6 +10,7 @@ import { GetAllCategoriesResponse } from 'src/app/models/interfaces/categories/r
 import { EventAction } from 'src/app/models/interfaces/products/event/EventAction';
 import { CreateProductRequest } from 'src/app/models/interfaces/products/request/CreateProductRequest';
 import { EditProductRequest } from 'src/app/models/interfaces/products/request/EditProductRequest';
+import { SaleProductRequest } from 'src/app/models/interfaces/products/request/SaleProductRequest';
 import { CategoriesService } from 'src/app/services/categories/categories.service';
 import { ProductsService } from 'src/app/services/products/products.service';
 import { ProductsDataTransferService } from 'src/app/shared/services/products/products-data-transfer.service';
@@ -49,7 +50,7 @@ export class ProductFormComponent implements OnInit, OnDestroy {
 
   public saleProductForm = this.formBuilder.group({
     amount: [0, Validators.required],
-    product_id: [0, Validators.required]
+    product_id: ['', Validators.required]
   })
 
   public saleProductSelected!: GetAllProductsResponse;
@@ -207,7 +208,42 @@ export class ProductFormComponent implements OnInit, OnDestroy {
   }
 
   handleSubmitSaleProduct(): void {
+    if(this.saleProductForm?.value && this.saleProductForm?.valid) {
+      const requestDatas: SaleProductRequest = {
+        amount: this.saleProductForm.value?.amount as number,
+        product_id: this.saleProductForm.value?.product_id as string,
+      }
 
+      this.productService
+        .saleProduct(requestDatas)
+        .pipe(takeUntil(this.destroy$))
+        .subscribe({
+          next: (response) => {
+            if(response) {
+              this.saleProductForm.reset();
+              this.getProductDatas();
+              this.messageService.add({
+                severity: 'success',
+                summary: 'Sucesso',
+                detail: 'Venda efetuada com sucesso',
+                life: 30000,
+              })
+              this.router.navigate(['/dashboard'])
+            }
+          },
+          error: (err) => {
+            console.log(err);
+            this.saleProductForm.reset();
+            this.messageService.add({
+              severity: 'error',
+              summary: 'Erro',
+              detail: 'Erro ao vender produto',
+              life: 30000,
+            })
+          }
+        })
+
+    }
   }
 
   ngOnDestroy(): void {
