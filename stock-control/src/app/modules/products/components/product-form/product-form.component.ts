@@ -47,6 +47,13 @@ export class ProductFormComponent implements OnInit, OnDestroy {
     category_id: ['', Validators.required]
   })
 
+  public saleProductForm = this.formBuilder.group({
+    amount: [0, Validators.required],
+    product_id: [0, Validators.required]
+  })
+
+  public saleProductSelected!: GetAllProductsResponse;
+
   public renderDropdown= false;
 
   public addProductAction = ProductEvent.ADD_PRODUCT_EVENT;
@@ -65,7 +72,7 @@ export class ProductFormComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.productAction = this.ref.data;
-    
+
     this.productAction?.event?.action === this.saleProductAction && this.getProductDatas();
 
     this.getAllCategories();
@@ -197,6 +204,10 @@ export class ProductFormComponent implements OnInit, OnDestroy {
         }
       }
     })
+  }
+
+  handleSubmitSaleProduct(): void {
+
   }
 
   ngOnDestroy(): void {
