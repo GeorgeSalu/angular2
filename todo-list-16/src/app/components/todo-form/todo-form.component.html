@@ -1,1 +1,26 @@
-<p>todo-form works!</p>
+<form [formGroup]="todosForm" (ngSubmit)="handleCreateNewTodos()">
+  <section class="todo_form_card">
+    <h1 class="todo_form_title">Adicionar tarefa</h1>
+
+    <!-- nome -->
+    <mat-form-field color="accent" appearance="outline" class="todo_form_input">
+      <mat-label>Nome</mat-label>
+      <input matInput formControlName="title" placeholder="Nome" />
+    </mat-form-field>
+
+    <!-- descricao -->
+    <mat-form-field color="accent" appearance="outline" class="todo_form_input">
+      <mat-label>Descricao</mat-label>
+      <textarea matInput formControlName="description" placeholder="Descricao" ></textarea>
+    </mat-form-field>
+
+    <div class="todo_form_actions">
+      <button mat-raised-button class="todo_form_sucess_btn" type="submit">
+        Adicionar
+      </button>
+      <button mat-raised-button color="warn" type="button">
+        Cancelar
+      </button>
+    </div>
+  </section>
+</form>
