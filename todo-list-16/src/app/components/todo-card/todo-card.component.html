@@ -1,1 +1,8 @@
-<p>todo-card works!</p>
+<mat-tab-group color="accent" *ngIf="todosList().length > 0; else withoutTodos">
+  <mat-tab label="Em andamento"></mat-tab>
+  <mat-tab label="Concluidas"></mat-tab>
+</mat-tab-group>
+
+<ng-template #withoutTodos>
+  <h3 class="warn_message">Não a tarefas a serem exibidas</h3>
+</ng-template>
