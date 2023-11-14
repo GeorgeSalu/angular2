@@ -59,6 +59,7 @@ export class TodoCardComponent implements OnInit {
       if(index !== -1) {
         this.todosSignal.mutate((todo) => {
           todo.slice(index, 1);
+          this.saveTodoInLocalStorage()
         })
       }
 
