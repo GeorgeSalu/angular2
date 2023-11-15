@@ -36,7 +36,8 @@ export class AppComponent implements OnInit{
   ngOnInit(): void {
     //this.getSchoolDatas()
     //this.getMultipledAges()
-    this.getPeopleProfession()
+    //this.getPeopleProfession()
+    this.getSoftwareDevelopName();
   }
 
   public getMultipledAges() {
