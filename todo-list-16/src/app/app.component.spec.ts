@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { first } from 'rxjs';
 
 describe('AppComponent', () => {
 
@@ -30,6 +31,22 @@ describe('AppComponent', () => {
     fixture.detectChanges();
 
     expect(component.projectName).toEqual('testing angular with jest');
+  })
+
+  // teste do @output
+  it('should set @output() property corretly', () => {
+    component.projectName = "testing angular aplication";
+
+    component.outputEvent
+      .pipe(
+        first()
+      )
+      .subscribe({
+        next: (event) => {
+          expect(event).toEqual('testing angular aplication');
+          component.handleEmitEvent()
+        }
+      })
   })
 
 });

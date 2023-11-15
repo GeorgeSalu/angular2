@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
 import { TodoCardComponent } from './components/todo-card/todo-card.component';
@@ -17,6 +17,13 @@ export class AppComponent implements OnInit{
 
   @Input()
   public projectName!: string;
+
+  @Output()
+  public outputEvent = new EventEmitter<string>();
+
+  public handleEmitEvent(): void {
+    this.outputEvent.emit(this.projectName)
+  }
 
   public students: Array<SchoolData> = [];
   public teachers: Array<SchoolData> = [];
