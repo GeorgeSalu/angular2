@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
 import { TodoCardComponent } from './components/todo-card/todo-card.component';
@@ -14,6 +14,10 @@ import { Observable, filter, from, map, of, switchMap, zip } from 'rxjs';
 })
 export class AppComponent implements OnInit{
   public title = 'todo-list-16';
+
+  @Input()
+  public projectName!: string;
+
   public students: Array<SchoolData> = [];
   public teachers: Array<SchoolData> = [];
   private zipSchoolResponse$ = zip(
