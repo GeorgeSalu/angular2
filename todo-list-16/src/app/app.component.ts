@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
 import { TodoCardComponent } from './components/todo-card/todo-card.component';
 import { SchoolData, SchoolService } from './services/school.service'
-import { Observable, filter, from, map, of, zip } from 'rxjs';
+import { Observable, filter, from, map, of, switchMap, zip } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -29,6 +29,7 @@ export class AppComponent implements OnInit{
     { name: 'sebastiao', age: 50, profession: 'software develop' },
     { name: 'carla', age: 60, profession: 'software develop' },
   ])
+  private studentUserId = '2'
 
   constructor(private schoolService: SchoolService){}
 
@@ -37,7 +38,27 @@ export class AppComponent implements OnInit{
     //this.getSchoolDatas()
     //this.getMultipledAges()
     //this.getPeopleProfession()
-    this.getSoftwareDevelopName();
+    //this.getSoftwareDevelopName();
+    this.handleFindUstudentById()
+  }
+
+  public handleFindUstudentById(): void {
+    this.getStudentsDatas().pipe(
+        switchMap((students) => 
+          this.findStudentsById(students, this.studentUserId)
+        ))
+        .subscribe({
+          next: (response) => {
+            console.log('retorno estudante filtrado', response)
+          }
+        })
+  }
+
+  public findStudentsById(
+    students: Array<SchoolData>,
+    userId: string
+  ){
+    return of([students.find((student) => student.id === userId)])
   }
 
   public getMultipledAges() {
