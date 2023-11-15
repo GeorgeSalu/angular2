@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
 import { TodoCardComponent } from './components/todo-card/todo-card.component';
 import { SchoolData, SchoolService } from './services/school.service'
-import { Observable, zip } from 'rxjs';
+import { Observable, map, of, zip } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -21,11 +21,24 @@ export class AppComponent implements OnInit{
     this.getTeachersDatas()
   );
 
+  private ages = of(20,30,40,50,60,70);
+
   constructor(private schoolService: SchoolService){}
 
 
   ngOnInit(): void {
-    this.getSchoolDatas()
+    //this.getSchoolDatas()
+    this.getMultipledAges()
+  }
+
+  public getMultipledAges() {
+    this.ages
+      .pipe(
+        map((age) => age * age)
+      )
+      .subscribe({
+        next: ( response) => console.log('idade multiplicado', response)
+      })
   }
 
   public getSchoolDatas(): void {
