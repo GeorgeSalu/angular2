@@ -55,7 +55,7 @@ describe('AppComponent', () => {
       })
   })
 
-  it('should create new todo corre and call service method', () => {
+  it('should create new todo correctly and call service method', () => {
     jest.spyOn(todoSignalService, 'updateTodos');
     
     const newTodo: Todo = {
