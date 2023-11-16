@@ -25,7 +25,7 @@ describe('ExampleTestService', () => {
     
   })
 
-  it('should correct todo List', () => {
+  it('should correct todo list', () => {
     const newTodo: Todo = {
       id: 0,
       title: "new todo",
