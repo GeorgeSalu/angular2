@@ -1,9 +1,11 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, WritableSignal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
 import { TodoCardComponent } from './components/todo-card/todo-card.component';
 import { SchoolData, SchoolService } from './services/school.service'
 import { Observable, filter, from, map, of, switchMap, zip } from 'rxjs';
+import { TodoSignalsService } from './services/todo-signals.service';
+import { Todo } from './models/model/todo.model';
 
 @Component({
   selector: 'app-root',
@@ -20,6 +22,8 @@ export class AppComponent implements OnInit{
 
   @Output()
   public outputEvent = new EventEmitter<string>();
+
+  public todoSignal!: WritableSignal<Array<Todo>>;
 
   public handleEmitEvent(): void {
     this.outputEvent.emit(this.projectName)
@@ -42,7 +46,17 @@ export class AppComponent implements OnInit{
   ])
   private studentUserId = '2'
 
-  constructor(private schoolService: SchoolService){}
+  constructor(
+    private schoolService: SchoolService,
+    private todoSignalService: TodoSignalsService
+  ){}
+
+  public handleCreateTodo(todo: Todo): void {
+    if(todo) {
+      this.todoSignalService.updateTodos(todo);
+      this.todoSignal = this.todoSignalService.todosState
+    }
+  }
 
 
   ngOnInit(): void {
