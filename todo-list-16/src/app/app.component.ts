@@ -83,7 +83,7 @@ export class AppComponent implements OnInit{
         ))
         .subscribe({
           next: (response) => {
-            console.log('retorno estudante filtrado', response)
+            //console.log('retorno estudante filtrado', response)
           }
         })
   }
