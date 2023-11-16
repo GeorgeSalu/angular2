@@ -26,6 +26,13 @@ export class AppComponent implements OnInit{
   public todoSignal!: WritableSignal<Array<Todo>>;
 
   public renderTestMessage = false;
+  public isDoned = false;
+
+  public handleCheckIsDone(): void {
+    setTimeout(() => {
+      this.isDoned = true;
+    },200);
+  }
 
   public handleEmitEvent(): void {
     this.outputEvent.emit(this.projectName)

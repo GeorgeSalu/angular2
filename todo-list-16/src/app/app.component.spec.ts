@@ -97,4 +97,10 @@ describe('AppComponent', () => {
     
   })
 
+  // teste de setTimout()
+  it('should isDoned property to be false', () => {
+    component.handleCheckIsDone();
+    expect(component.isDoned).toBe(false);
+  })
+
 });
