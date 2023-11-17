@@ -1,6 +1,22 @@
 <div style="display: flex; justify-content: center; align-items: center;flex-direction: column; gap: 1rem;">
   @for(user of userDatasList; track user.id) {
-    <span>{{ user.age}}</span>
+    @switch (user.age) {
+      @case (20) {
+        <span style="color: blue;">{{ user.name }} is {{ user.profession }} and is 20 years old</span>
+      }
+
+      @case (30) {
+        <span style="color: red;">{{ user.name }} is {{ user.profession }} and is 30 years old</span>
+      }
+
+      @case (40) {
+        <span style="color: brown;">{{ user.name }} is {{ user.profession }} and is 40 years old</span>
+      }
+
+      @default {
+        <span>{{ user.name }} is {{ user.profession }} and your age is {{ user.age }}</span>
+      }
+    }
   } @empty {
     <span style="color: red;">dont have datas to show</span>
   }
