@@ -1,15 +1,1 @@
-<div style="display: flex; justify-content: center; align-items: center;flex-direction: column; gap: 1rem;">
-  
-  <h3 #studing>first element to render</h3>
-
-  @defer (on interaction(studing) ) {
-    <h3 style="color: red;">second element to render</h3>
-  } @placeholder {
-    <span style="color: blue;">conteudo inicial do placeholder</span>
-  } @loading {
-    <span>conteudo sendo carregado</span>
-  } @error {
-    <span></span>
-  }
-
-</div>
+<app-input-transform [user]="userDatasList[0]" />

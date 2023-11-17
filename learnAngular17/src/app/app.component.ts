@@ -1,11 +1,19 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+import { InputTransformComponent } from './components/input-transform/input-transform.component';
+
+export interface USer {
+  name: string;
+  age: number;
+  profession: string;
+  id: string;
+}
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
+  imports: [CommonModule, RouterOutlet, InputTransformComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
