@@ -1,11 +1,7 @@
 <div style="display: flex; justify-content: center; align-items: center;flex-direction: column; gap: 1rem;">
   @for(user of userDatasList; track user.id) {
-    @if(user.profession === 'software developer') {
-      <span style="color: chartreuse;"> {{ user.name }} is software developer </span>
-    } @else if(user.profession === 'scrum master') {
-      <span style="color: cadetblue;"> {{ user.name }} is scrum master </span>
-    } @else {
-      <span style="color: black;"> {{ user.profession }} and your age is {{ user.age }} </span>
-    }
+    <span>{{ user.age}}</span>
+  } @empty {
+    <span style="color: red;">dont have datas to show</span>
   }
 </div>
