@@ -22,4 +22,15 @@ export class TamplateBindingComponent {
     return this.age--;
   }
 
+  public onKeyDown(event: Event) {
+    return console.log(event);
+  }
+
+  public onMouseMove(event: MouseEvent) {
+    return console.log({
+      clietX: event.clientX,
+      clietY: event.clientY
+    });
+  }
+
 }
