@@ -15,7 +15,9 @@ import { NewComponent } from './components/new-component/new-component.component
   template: `
     <!--  <router-outlet></router-outlet> -->
     <h1>Curso de angular</h1>
-    <app-new-component />
+    <div class="theme-dark">
+      <app-new-component />
+    </div>
   `,
 })
 export class AppComponent {

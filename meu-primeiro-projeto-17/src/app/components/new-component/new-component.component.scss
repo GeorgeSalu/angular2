@@ -11,6 +11,31 @@
 
 :host {
   h2 {
+    background: blue;
+  }
+}
+
+/*
+  :host-context() ele é um seletor que permite aplicar estilos 
+  com base no contexto do componente pai.
+
+  isso é util quando vc deseja aplicar estilos com base em condições
+  no componente pai.
+
+  por exemplo, vocẽ pode alterar a cor de fundo de um componente 
+  filho com base em um valor definido em seu componente pai.
+
+*/
+
+:host-context(.theme-dark) {
+  h2 {
+    background: #000;
+    color: #fff;
+  }
+}
+
+:host-context(.theme-red) {
+  h2 {
     background: red;
   }
 }
