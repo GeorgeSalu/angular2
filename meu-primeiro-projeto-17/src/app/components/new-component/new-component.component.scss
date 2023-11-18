@@ -39,3 +39,23 @@
     background: red;
   }
 }
+
+
+/*
+
+  ::ng-deep ele é um mecanismo que permite que os estilos 
+  definidos em um componente sejam aplicados aos elementos.
+
+  em outras palavras, ele permite que você contorne 
+  o encapsulamento de estilos em componentes.
+
+  No entanto, é importante notar que o uso excessivo 
+  de ::ng-deep pode tornar o codigo mas dificil de manter e 
+  pode nao ser a melhor pratica em muitos casos.
+
+*/
+::ng-deep {
+  .theme-red {
+    border: 5px solid blue;
+  }
+}
