@@ -3,6 +3,10 @@
 <p>{{ name }} - {{ age }} - {{ sum(1,2) }}</p>
 <p>{{ condition }}</p>
 
-<hr/>
+<hr />
 <p>property binding</p>
 <button [disabled]="isDisabled" >button</button>
+
+<hr />
+<p>attibute binding</p>
+<p [attr.title]="name" [attr.aria-label]="name">Atribto</p>
