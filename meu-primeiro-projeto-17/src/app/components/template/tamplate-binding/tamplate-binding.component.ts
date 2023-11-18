@@ -13,4 +13,8 @@ export class TamplateBindingComponent {
   public age = 32;
   public condition = this.age > 1 ? 'teste' : 'teste 2'
   
+  public sum(val1: number, val2: number) {
+    return val1 + val2;
+  }
+
 }
