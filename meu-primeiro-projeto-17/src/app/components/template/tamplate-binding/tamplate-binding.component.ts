@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-tamplate-binding',
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './tamplate-binding.component.html',
   styleUrl: './tamplate-binding.component.scss'
 })
