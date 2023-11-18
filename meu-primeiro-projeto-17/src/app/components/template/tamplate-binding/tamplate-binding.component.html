@@ -1,6 +1,6 @@
 <p>tamplate-binding works!</p>
 
-<p>{{ name }} - {{ age }} - {{ sum(1,2) }}</p>
+<p>{{ name }} - {{ age }} - {{ sum() }}</p>
 <p>{{ condition }}</p>
 
 <hr />
@@ -15,3 +15,8 @@
 <p [class.background-red]="age >= 32">
   {{name}}
 </p>
+
+<h2>Event binging</h2>
+
+<button (click)="sum()">+</button>
+<button (click)="sub()">-</button>
