@@ -1,3 +1,16 @@
-h2 {
-  color: red;
+/*
+  :host ele é um seletor especial que se refere ao componente
+  em que esta sendo usado.
+
+  É usado para aplicar estilos diretamente ao componente em si,
+  em vez de seus elementos filhos
+
+  voce pode definir estilos especificos para o componente raiz,
+  por exemplo, alterando a cor de fundo ou a borda do componente
+*/
+
+:host {
+  h2 {
+    background: red;
+  }
 }
