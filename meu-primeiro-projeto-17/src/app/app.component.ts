@@ -18,9 +18,9 @@ import { TemplateControlFlowComponent } from './components/template/template-con
   `],
   template: `
     <!--  <router-outlet></router-outlet> -->
-    <h1>Curso de angular</h1>
-    <app-tamplate-binding />
-    <app-template-variables />
+    <!-- <h1>Curso de angular</h1> -->
+    <!-- <app-tamplate-binding /> -->
+    <!-- <app-template-variables /> -->
     <app-template-control-flow />
   `,
 })
