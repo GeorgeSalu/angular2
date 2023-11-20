@@ -4,7 +4,11 @@
 <!-- nova forma -->
 
 @if(loadingData$ | async; as data) {
-  {{ data }}
+ <ul>
+  @for (item of data; track item) {
+    <li>{{item}}</li>
+  }
+ </ul>
 } @else {
   <p>carregando</p>
 }
