@@ -3,17 +3,17 @@
 
 <!-- nova forma -->
 
-@if(isTrue) {
-  sim 1 é === 1
+@if(loadingData$ | async; as data) {
+  {{ data }}
 } @else {
-  não esta correto
+  <p>carregando</p>
 }
 
 <!-- forma antiga -->
 
-<ng-container *ngIf="isTrue; else isFalse">
-  sim 1 é === 1 (forma antiga)
+<ng-container *ngIf="loadingData$ | async as data; else loading">
+  <p>{{ data }}</p>
 </ng-container>
-<ng-template #isFalse>
-  nao esta correto
+<ng-template #loading>
+  <p>carregando</p>
 </ng-template>
