@@ -33,6 +33,6 @@
 
 <hr />
 <h3>Diretivas de atributos</h3>
-<div [ngClass]="{ 'background-red': true }">classes condicionais</div>
+<div [ngClass]="{ 'background-red': age > 35, 'background-blue': age < 35 }">classes condicionais</div>
 
 <div [ngStyle]="{ color: age > 35 ? 'green' : 'red'  }">estilos dinamicos</div>
