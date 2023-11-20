@@ -1,8 +1,19 @@
 <p>Control flow</p>
 <h3>if</h3>
 
-@if(1 === 1) {
+<!-- nova forma -->
+
+@if(isTrue) {
   sim 1 é === 1
 } @else {
   não esta correto
 }
+
+<!-- forma antiga -->
+
+<ng-container *ngIf="isTrue; else isFalse">
+  sim 1 é === 1 (forma antiga)
+</ng-container>
+<ng-template #isFalse>
+  nao esta correto
+</ng-template>
