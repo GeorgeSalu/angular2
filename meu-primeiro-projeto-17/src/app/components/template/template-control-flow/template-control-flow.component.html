@@ -25,3 +25,24 @@
 <ng-template #loading>
   <p>carregando</p>
 </ng-template>
+
+<h2>Control flow</h2>
+<h3>for</h3>
+@for (item of itens; track item.name;
+      let i = $index;
+      let c = $count;
+      let f = $first;
+      let l = $last;
+      let e = $even;
+      let o = $odd;) {
+  <p>{{ item.name }}</p>
+  <p>index - {{ i }}</p>
+  <p>count - {{ c }}</p>
+  <p>first - {{ f }}</p>
+  <p>last - {{ l }}</p>
+  <p>even - {{ e }}</p>
+  <p>odd - {{ o }}</p>
+}
+
+<input #name type="text" />
+<button (click)="addNewName(name.value)">add name</button>
