@@ -19,4 +19,8 @@ export class TemplateControlFlowComponent {
     'item 3',
   ]).pipe(delay(3000));
 
+  public trackByFn(index: number) {
+    return index;
+  }
+
 }

@@ -16,7 +16,11 @@
 <!-- forma antiga -->
 
 <ng-container *ngIf="loadingData$ | async as data; else loading">
-  <p>{{ data }}</p>
+  <ul>
+    <ng-container *ngFor="let item of data; trackBy: trackByFn">
+      <li>{{item}}</li>
+    </ng-container>
+  </ul>
 </ng-container>
 <ng-template #loading>
   <p>carregando</p>
