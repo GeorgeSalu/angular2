@@ -7,6 +7,8 @@
  <ul>
   @for (item of data; track item) {
     <li>{{item}}</li>
+  } @empty { 
+    <li>nao contem valores</li>
   }
  </ul>
 } @else {

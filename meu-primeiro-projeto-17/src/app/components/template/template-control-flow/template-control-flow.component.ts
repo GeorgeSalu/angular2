@@ -13,7 +13,7 @@ export class TemplateControlFlowComponent {
 
   public isTrue = true;
 
-  public itens = [{ name: 'george' }]
+  public itens: Array<{ name: string }> = [];
   public loadingData$: Observable<string[]> = of([
     'item 1',
     'item 2',
