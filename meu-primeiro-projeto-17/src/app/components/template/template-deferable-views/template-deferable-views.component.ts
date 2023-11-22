@@ -10,4 +10,6 @@ import { NewComponent } from '../../new-component/new-component.component';
 })
 export class TemplateDeferableViewsComponent {
 
+  public isTrue = false;
+
 }
