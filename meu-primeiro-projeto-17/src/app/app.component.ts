@@ -5,12 +5,13 @@ import { NewComponent } from './components/new-component/new-component.component
 import { TamplateBindingComponent } from './components/template/tamplate-binding/tamplate-binding.component';
 import { TemplateVariablesComponent } from './components/template/template-variables/template-variables.component';
 import { TemplateControlFlowComponent } from './components/template/template-control-flow/template-control-flow.component';
+import { TemplateDeferableViewsComponent } from './components/template/template-deferable-views/template-deferable-views.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, RouterOutlet, NewComponent, TamplateBindingComponent
-          ,TemplateVariablesComponent, TemplateControlFlowComponent],
+          ,TemplateVariablesComponent, TemplateControlFlowComponent, TemplateDeferableViewsComponent],
   styles: [`
     h1 {
       color: red
@@ -21,7 +22,8 @@ import { TemplateControlFlowComponent } from './components/template/template-con
     <!-- <h1>Curso de angular</h1> -->
     <!-- <app-tamplate-binding /> -->
     <!-- <app-template-variables /> -->
-    <app-template-control-flow />
+    <!-- <app-template-control-flow /> -->
+    <app-template-deferable-views />
   `,
 })
 export class AppComponent {
