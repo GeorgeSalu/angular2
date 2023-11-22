@@ -48,3 +48,16 @@
 
 <input #name type="text" />
 <button (click)="addNewName(name.value)">add name</button>
+
+<h2>switch</h2>
+@switch (switchCondition) {
+  @case ('A') {
+    <p>sim sua letra é a</p>
+  }
+  @case ('B') {
+    <p>sim sua letra é b</p>
+  }
+  @default {
+    <p>os dados nao foram encontrados</p>
+  }
+}

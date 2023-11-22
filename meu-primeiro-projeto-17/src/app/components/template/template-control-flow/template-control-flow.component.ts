@@ -12,6 +12,7 @@ import { Observable, delay, of } from 'rxjs';
 export class TemplateControlFlowComponent {
 
   public isTrue = true;
+  public switchCondition = 'B';
 
   public itens: Array<{ name: string }> = [];
   public loadingData$: Observable<string[]> = of([
