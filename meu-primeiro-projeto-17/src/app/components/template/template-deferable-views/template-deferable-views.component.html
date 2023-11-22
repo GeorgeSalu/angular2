@@ -1,6 +1,11 @@
+<!--
+  on - especifica uma condição de acionador usando um acionador da lista
+  (idle, timer, viewport, interaction, hover, immediate, prefetch  )
+-->
+
 <p>Deferable views</p>
 
-@defer {
+@defer(on idle) {
   <app-new-component />
 } @placeholder {
   <p>mostrar antes de carregar algo.</p>
