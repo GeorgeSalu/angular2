@@ -1,1 +1,11 @@
-<p>template-deferable-views works!</p>
+<p>Deferable views</p>
+
+@defer {
+  <app-new-component />
+} @placeholder {
+  <p>mostrar antes de carregar algo.</p>
+} @loading {
+  <p>Loading</p>
+} @error {
+  <p>loading failed</p>
+}
