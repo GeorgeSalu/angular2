@@ -6,12 +6,14 @@ import { TamplateBindingComponent } from './components/template/tamplate-binding
 import { TemplateVariablesComponent } from './components/template/template-variables/template-variables.component';
 import { TemplateControlFlowComponent } from './components/template/template-control-flow/template-control-flow.component';
 import { TemplateDeferableViewsComponent } from './components/template/template-deferable-views/template-deferable-views.component';
+import { SignalsComponent } from './components/signals/signals/signals.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, RouterOutlet, NewComponent, TamplateBindingComponent
-          ,TemplateVariablesComponent, TemplateControlFlowComponent, TemplateDeferableViewsComponent],
+          ,TemplateVariablesComponent, TemplateControlFlowComponent, TemplateDeferableViewsComponent,
+          SignalsComponent],
   styles: [`
     h1 {
       color: red
@@ -23,7 +25,8 @@ import { TemplateDeferableViewsComponent } from './components/template/template-
     <!-- <app-tamplate-binding /> -->
     <!-- <app-template-variables /> -->
     <!-- <app-template-control-flow /> -->
-    <app-template-deferable-views />
+    <!-- <app-template-deferable-views /> -->
+    <app-signals />
   `,
 })
 export class AppComponent {

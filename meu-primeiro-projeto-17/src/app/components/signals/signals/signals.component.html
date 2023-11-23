@@ -1,0 +1,13 @@
+<p>signals</p>
+
+<p>{{ firstName() }} {{ lastName() }}</p>
+<p>full name: {{ fullName }}</p>
+
+<ul>
+  @for (item of array; track item) {
+    <li>{{ item }}</li>
+  }
+</ul>
+
+<button (click)="updateName()">update name</button>
+<button (click)="updateArray()">update array</button>
