@@ -18,6 +18,23 @@ export class SignalsComponent {
 
   public array = signal([1]);
 
+  /**
+    effect - raramente são necessarios na maioria dos codigos, mas podem ser uteis em
+    circustancias especiais.
+
+    - registro de dados exibidos e quando eles mudam, seja para analise ou como ferramenta
+    de depuração
+
+    - manter os dados sincronizados com window.locastorage.
+
+    - adicionando comportamento DOM personalizado que não podem ser expresso com sintaxe de
+    modelo
+
+    - executar renderização personalizada em um <canvas>, biblioteca de graficos ou outra 
+    biblioteca de UI de terceiros
+  
+   */
+
   constructor() {
     effect(() => {
       console.log(this.firstName())
