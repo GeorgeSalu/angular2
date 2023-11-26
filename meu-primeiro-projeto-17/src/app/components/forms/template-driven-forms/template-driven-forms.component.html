@@ -19,4 +19,49 @@
   <p>touched: {{ name.touched }}</p>
 
   <hr />
+
+  <label>
+    feminino:
+    <input
+      type="radio"
+      value="feminino"
+      name="radioSexo"
+      #sexo="ngModel"
+      [ngModel]="sexo.value"
+      required=""
+    />
+  </label>
+
+  <label>
+    masculino:
+    <input
+      type="radio"
+      value="masculino"
+      name="radioSexo"
+      #sexo="ngModel"
+      [ngModel]="sexo.value"
+      required=""
+    />
+  </label>
+
+
+  <label>
+    outros:
+    <input
+      type="radio"
+      value="outros"
+      name="radioSexo"
+      #sexo="ngModel"
+      [ngModel]="sexo.value"
+      required=""
+    />
+  </label>
+
+  <hr />
+  <p>value: {{ sexo.value }}</p>
+  <p>valid: {{ sexo.valid }}</p>
+  <p>dirty: {{ sexo.dirty }}</p>
+  <p>touched: {{ sexo.touched }}</p>
+
+  <hr />
 </form>
