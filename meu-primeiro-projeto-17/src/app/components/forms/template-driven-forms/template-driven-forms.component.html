@@ -64,4 +64,24 @@
   <p>touched: {{ sexo.touched }}</p>
 
   <hr />
+
+  <label>
+    agnular:
+    <input
+      type="checkbox"
+      value="anular"
+      name="checkboxAngular"
+      #techAngular="ngModel"
+      [ngModel]="techAngular.value"
+      required=""
+    />
+  </label>
+
+  <hr />
+  <p>value: {{ techAngular.value }}</p>
+  <p>valid: {{ techAngular.valid }}</p>
+  <p>dirty: {{ techAngular.dirty }}</p>
+  <p>touched: {{ techAngular.touched }}</p>
+
+  <hr />
 </form>
