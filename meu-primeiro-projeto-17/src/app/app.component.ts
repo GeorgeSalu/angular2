@@ -12,9 +12,16 @@ import { PaiOuMaeComponent } from './components/comunicacao-entre-components/pai
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, NewComponent, TamplateBindingComponent
-          ,TemplateVariablesComponent, TemplateControlFlowComponent, TemplateDeferableViewsComponent,
-          SignalsComponent, PaiOuMaeComponent],
+  imports: [
+    CommonModule, 
+    RouterOutlet, 
+    NewComponent, 
+    TamplateBindingComponent,
+    TemplateVariablesComponent, 
+    TemplateControlFlowComponent, 
+    TemplateDeferableViewsComponent,
+    SignalsComponent, 
+    PaiOuMaeComponent],
   styles: [`
     h1 {
       color: red
