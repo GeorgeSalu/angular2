@@ -12,4 +12,5 @@ import { OutputComponent } from '../output/output.component';
 export class PaiOuMaeComponent {
 
   public name = signal("dener")
+  public outputName = signal('output : sem valor');
 }
