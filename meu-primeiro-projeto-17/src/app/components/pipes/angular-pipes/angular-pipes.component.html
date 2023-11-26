@@ -1,0 +1,19 @@
+<p>pipes</p>
+
+<ul>
+  <li>
+    {{ date() | date: 'short' }}
+  </li>
+  <li>
+    {{ 'george' | uppercase }}
+  </li>
+  <li>
+    {{ 'george' | lowercase }}
+  </li>
+  <li>
+    json {{ json() | json }}
+  </li>
+  <li>
+    async {{ loadingData$ | async }}
+  </li>
+</ul>

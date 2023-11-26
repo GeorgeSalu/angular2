@@ -8,6 +8,7 @@ import { TemplateControlFlowComponent } from './components/template/template-con
 import { TemplateDeferableViewsComponent } from './components/template/template-deferable-views/template-deferable-views.component';
 import { SignalsComponent } from './components/signals/signals/signals.component';
 import { PaiOuMaeComponent } from './components/comunicacao-entre-components/pai-ou-mae/pai-ou-mae.component';
+import { AngularPipesComponent } from './components/pipes/angular-pipes/angular-pipes.component';
 
 @Component({
   selector: 'app-root',
@@ -21,7 +22,8 @@ import { PaiOuMaeComponent } from './components/comunicacao-entre-components/pai
     TemplateControlFlowComponent, 
     TemplateDeferableViewsComponent,
     SignalsComponent, 
-    PaiOuMaeComponent],
+    PaiOuMaeComponent,
+    AngularPipesComponent],
   styles: [`
     h1 {
       color: red
@@ -35,7 +37,8 @@ import { PaiOuMaeComponent } from './components/comunicacao-entre-components/pai
     <!-- <app-template-control-flow /> -->
     <!-- <app-template-deferable-views /> -->
     <!-- <app-signals /> -->
-    <app-pai-ou-mae />
+    <!-- <app-pai-ou-mae /> -->
+    <app-angular-pipes />
   `,
 })
 export class AppComponent {
