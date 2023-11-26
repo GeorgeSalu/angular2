@@ -7,13 +7,14 @@ import { TemplateVariablesComponent } from './components/template/template-varia
 import { TemplateControlFlowComponent } from './components/template/template-control-flow/template-control-flow.component';
 import { TemplateDeferableViewsComponent } from './components/template/template-deferable-views/template-deferable-views.component';
 import { SignalsComponent } from './components/signals/signals/signals.component';
+import { PaiOuMaeComponent } from './components/comunicacao-entre-components/pai-ou-mae/pai-ou-mae.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, RouterOutlet, NewComponent, TamplateBindingComponent
           ,TemplateVariablesComponent, TemplateControlFlowComponent, TemplateDeferableViewsComponent,
-          SignalsComponent],
+          SignalsComponent, PaiOuMaeComponent],
   styles: [`
     h1 {
       color: red
@@ -26,7 +27,8 @@ import { SignalsComponent } from './components/signals/signals/signals.component
     <!-- <app-template-variables /> -->
     <!-- <app-template-control-flow /> -->
     <!-- <app-template-deferable-views /> -->
-    <app-signals />
+    <!-- <app-signals /> -->
+    <app-pai-ou-mae />
   `,
 })
 export class AppComponent {
