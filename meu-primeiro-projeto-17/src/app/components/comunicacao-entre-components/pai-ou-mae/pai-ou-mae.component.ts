@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { InputComponent } from '../input/input.component';
 import { OutputComponent } from '../output/output.component';
 
@@ -11,4 +11,5 @@ import { OutputComponent } from '../output/output.component';
 })
 export class PaiOuMaeComponent {
 
+  public name = signal("dener")
 }
