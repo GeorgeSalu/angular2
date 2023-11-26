@@ -1,19 +1,12 @@
 <p>pipes</p>
 
 <ul>
-  <li>
-    {{ date() | date: 'short' }}
-  </li>
-  <li>
-    {{ 'george' | uppercase }}
-  </li>
-  <li>
-    {{ 'george' | lowercase }}
-  </li>
-  <li>
-    json {{ json() | json }}
-  </li>
-  <li>
-    async {{ loadingData$ | async }}
-  </li>
+  <li>{{ date() | date: 'short' }}</li>
+  <li>{{ 'george' | uppercase }}</li>
+  <li>{{ 'george' | lowercase }}</li>
+  <li>json {{ json() | json }}</li>
+  <li>async {{ loadingData$ | async }}</li>
+  <li>currency {{ 200.5 | currency: "BRL" }}</li>
+  <li>number {{ 2000.5 | number: "1.0-2" }}</li>
+  <li>percent {{ 20.0 | percent }}</li>
 </ul>
