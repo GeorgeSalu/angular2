@@ -43,8 +43,8 @@ import { ReactiveFormsComponent } from './components/forms/reactive-forms/reacti
     <!-- <app-signals /> -->
     <!-- <app-pai-ou-mae /> -->
     <!--  <app-angular-pipes /> -->
-    <!-- <app-reactive-forms /> -->
-    <app-template-driven-forms />
+    <!-- <app-template-driven-forms /> -->
+    <app-reactive-forms /> 
   `,
 })
 export class AppComponent {
