@@ -6,6 +6,30 @@
   os formulario reativos
 -->
 
+<!--
+  formularios template-driven são uma maneira de criar e manipular formularios usando 
+  apenas o template do componente, eles são uma maneira facil de começar a criar formularios,
+  mas podem se tornar complexos para formularios grandes ou complexos
+  
+  os Formularios template-driven são baseados no uso do atributo ngModel. oatributo ngModel
+  é usado para vincular um controle de formulario a uma propriedade do componente.
+
+  Quando o valor do controle de formulario é alterado, a propriedade do componente também é a
+  atualizada
+
+  Vantagens dos formularios template-driven
+
+  - são faceis de começar a usar
+  - não requerem nenhum conhecimento de programação de formularios
+  - são uma boa opção para formularios simples
+
+  Desvantagens dos formularios template-driven
+
+  - podem se tornar complexos para formularios grandes ou complexos
+  - não fornecem controle total sobre o comportamento do formulario
+
+
+-->
 <h2>template driven forms</h2>
 
 <form #form="ngForm" (ngSubmit)="submitForm(form)">
