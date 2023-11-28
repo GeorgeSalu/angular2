@@ -94,6 +94,8 @@
 
   <hr />
   <p>value: {{ comidas.value | json }}</p>
+  <p>comida: {{ comidas.value?.comida }}</p>
+  <p>preco: {{ comidas.value?.preco }}</p>
   <p>valid: {{ comidas.valid }}</p>
   <p>dirty: {{ comidas.dirty }}</p>
   <p>touched: {{ comidas.touched }}</p>
