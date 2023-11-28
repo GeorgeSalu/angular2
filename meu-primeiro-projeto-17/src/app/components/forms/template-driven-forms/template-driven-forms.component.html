@@ -1,6 +1,6 @@
 <h2>template driven forms</h2>
 
-<form>
+<form #form="ngForm" (ngSubmit)="submitForm(form)">
   <label>
     Nome:
     <input
@@ -100,4 +100,9 @@
   <p>dirty: {{ comidas.dirty }}</p>
   <p>touched: {{ comidas.touched }}</p>
   <hr />
+
+  <button [disabled]="!form.valid">send</button>
 </form>
+
+{{ form.valid }}
+{{ form.value | json }}
