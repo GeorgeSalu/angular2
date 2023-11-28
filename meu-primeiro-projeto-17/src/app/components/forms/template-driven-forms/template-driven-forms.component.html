@@ -84,4 +84,18 @@
   <p>touched: {{ techAngular.touched }}</p>
 
   <hr />
+
+  <select name="selectComidas" #comidas="ngModel" ngModel>
+    <option value="">selecione um alimento</option>
+    @for (item of listComidas(); track item) {
+      <option [ngValue]="item">{{item.comida}}</option>
+    }
+  </select>
+
+  <hr />
+  <p>value: {{ comidas.value | json }}</p>
+  <p>valid: {{ comidas.valid }}</p>
+  <p>dirty: {{ comidas.dirty }}</p>
+  <p>touched: {{ comidas.touched }}</p>
+  <hr />
 </form>
