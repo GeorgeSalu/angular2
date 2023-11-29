@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-reactive-forms',
@@ -10,9 +10,21 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 })
 export class ReactiveFormsComponent {
 
-  name = new FormControl('dener');
+  public profileForm = new FormGroup({
+    name: new FormControl(''),
+    myStacks: new FormGroup({
+      front: new FormControl('Angular'),
+      back: new FormControl('nodejs')
+    }),
+  })
 
-  public updateName() {
-    this.name.setValue('maria')
+  public update() {
+    this.profileForm.patchValue({
+      name: 'maria',
+      myStacks: {
+        front: 'vuejs',
+        back: 'nestjs'
+      }
+    })
   }
 }
