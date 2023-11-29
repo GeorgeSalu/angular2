@@ -4,5 +4,9 @@
   <label>
     Nome: 
     <input type="text" [formControl]="name" />
+    <p>{{ name.value }}</p>
   </label>
+
+
+  <button type="button" (click)="updateName()">update name</button>
 </form>

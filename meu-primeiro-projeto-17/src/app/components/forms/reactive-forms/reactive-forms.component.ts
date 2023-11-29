@@ -11,4 +11,8 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 export class ReactiveFormsComponent {
 
   name = new FormControl('dener');
+
+  public updateName() {
+    this.name.setValue('maria')
+  }
 }
