@@ -1,24 +1,25 @@
-import { Component } from '@angular/core';
-import { FormArray, FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule, JsonPipe } from '@angular/common';
+import { Component, inject } from '@angular/core';
+import { FormArray, FormBuilder, FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-reactive-forms',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, CommonModule, JsonPipe],
   templateUrl: './reactive-forms.component.html',
   styleUrl: './reactive-forms.component.scss'
 })
 export class ReactiveFormsComponent {
 
-  public profileForm = new FormGroup({
-    name: new FormControl(''),
-    myStacks: new FormGroup({
-      front: new FormControl('Angular'),
-      back: new FormControl('nodejs')
+  #fb = inject(FormBuilder);
+
+  public profileForm = this.#fb.group({
+    name: [''],
+    myStacks: this.#fb.group({
+      front: ['Angular'],
+      back: ['nodejs']
     }),
-    myFavoriteFoods: new FormArray([
-      
-    ])
+    myFavoriteFoods: this.#fb.array([['x-tudo']])
   })
 
   public update() {
