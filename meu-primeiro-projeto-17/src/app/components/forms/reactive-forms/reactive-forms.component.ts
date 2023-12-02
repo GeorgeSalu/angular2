@@ -11,15 +11,15 @@ import { FormArray, FormBuilder, FormControl, FormGroup, ReactiveFormsModule } f
 })
 export class ReactiveFormsComponent {
 
-  #fb = inject(FormBuilder);
+  private _fb = inject(FormBuilder);
 
-  public profileForm = this.#fb.group({
+  public profileForm = this._fb.group({
     name: [''],
-    myStacks: this.#fb.group({
+    myStacks: this._fb.group({
       front: ['Angular'],
       back: ['nodejs']
     }),
-    myFavoriteFoods: this.#fb.array([['x-tudo']])
+    myFavoriteFoods: this._fb.array([['x-tudo']])
   })
 
   public update() {
