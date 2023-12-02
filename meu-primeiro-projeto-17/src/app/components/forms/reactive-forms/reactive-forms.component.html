@@ -7,6 +7,13 @@
     <p>{{ profileForm.value.name }}</p>
   </label>
 
+  <hr />
+  <h3>[formGroup]= profileForm</h3>
+  <p>value: {{profileForm.value | json}}</p>
+  <p>valid: {{profileForm.valid}}</p>
+  <p>dirty: {{profileForm.dirty}}</p>
+  <p>touched: {{profileForm.touched}}</p>
+
   <div formGroupName="myStacks">
     <label>
       Front:
@@ -43,4 +50,6 @@
       <hr />
     }
   </div>
+
+  <button [disabled]="!profileForm.valid">submit</button>
 </form>
