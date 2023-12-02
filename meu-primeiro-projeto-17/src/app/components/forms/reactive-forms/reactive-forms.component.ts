@@ -1,6 +1,6 @@
 import { CommonModule, JsonPipe } from '@angular/common';
 import { Component, inject } from '@angular/core';
-import { FormArray, FormBuilder, FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-reactive-forms',
@@ -14,7 +14,7 @@ export class ReactiveFormsComponent {
   private _fb = inject(FormBuilder);
 
   public profileForm = this._fb.group({
-    name: [''],
+    name: ['', [Validators.required]],
     myStacks: this._fb.group({
       front: ['Angular'],
       back: ['nodejs']
