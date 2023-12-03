@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { NewComponent } from './components/new-component/new-component.component';
@@ -13,6 +13,7 @@ import { TemplateDrivenFormsComponent } from './components/forms/template-driven
 import { ReactiveFormsComponent } from './components/forms/reactive-forms/reactive-forms.component';
 import { ContentComponent } from './components/content/content.component';
 import { HostElementsComponent } from './components/host-elements/host-elements.component';
+import { LifeCycleComponent } from './components/life-cycle/life-cycle/life-cycle.component';
 
 @Component({
   selector: 'app-root',
@@ -31,7 +32,8 @@ import { HostElementsComponent } from './components/host-elements/host-elements.
     TemplateDrivenFormsComponent,
     ReactiveFormsComponent,
     ContentComponent,
-    HostElementsComponent],
+    HostElementsComponent,
+    LifeCycleComponent],
   styles: [`
     h1 {
       color: red
@@ -59,9 +61,17 @@ import { HostElementsComponent } from './components/host-elements/host-elements.
         <p>footer</p>
       </footer>  
     </app-content> -->
-    <app-host-elements />
+    <!-- <app-host-elements /> -->
+    <app-life-cycle [myNumber]="number" />
   `,
 })
-export class AppComponent {
-  
+export class AppComponent implements OnInit{
+  public number = 1;
+
+  ngOnInit(): void {
+    setInterval(() => {
+      this.number++;
+    }, 1000)
+  }
+
 }
