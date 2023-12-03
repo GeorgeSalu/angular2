@@ -72,6 +72,8 @@ import { environment } from 'environments/environment';
 
     <button (click)="boolean = !boolean">destroy component</button>
   -->
+    <h1>Curso de angular</h1>
+    <h2>Service</h2>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
