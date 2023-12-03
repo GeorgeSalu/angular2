@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { AfterContentChecked, AfterContentInit, AfterViewInit, Component, ContentChild, DoCheck, ElementRef, Input, OnChanges, OnDestroy, OnInit, SimpleChanges, ViewChild, signal } from '@angular/core';
+import { AfterContentChecked, AfterContentInit, AfterViewInit, ChangeDetectionStrategy, Component, ContentChild, DoCheck, ElementRef, Input, OnChanges, OnDestroy, OnInit, SimpleChanges, ViewChild, signal } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { timer } from 'rxjs';
 
@@ -10,7 +10,8 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop'
   standalone: true,
   imports: [CommonModule],
   templateUrl: './life-cycle.component.html',
-  styleUrl: './life-cycle.component.scss'
+  styleUrl: './life-cycle.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LifeCycleComponent implements OnChanges, OnInit, DoCheck, AfterViewInit, AfterContentInit, AfterContentChecked, OnDestroy {
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { NewComponent } from './components/new-component/new-component.component';
@@ -71,8 +71,14 @@ import { LifeCycleComponent } from './components/life-cycle/life-cycle/life-cycl
 
     <button (click)="boolean = !boolean">destroy component</button>
   `,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   public number = 1;
   public boolean = true;
+  
+  ngOnInit(): void {
+    setInterval(() => this.number++, 1000)
+  }
+
 }
