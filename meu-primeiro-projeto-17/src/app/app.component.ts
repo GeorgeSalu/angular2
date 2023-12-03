@@ -62,12 +62,17 @@ import { LifeCycleComponent } from './components/life-cycle/life-cycle/life-cycl
       </footer>  
     </app-content> -->
     <!-- <app-host-elements /> -->
-    <app-life-cycle [myNumber]="number" >
-      <p #text>Text</p>
-    </app-life-cycle>
+
+    @if (boolean) {
+      <app-life-cycle [myNumber]="number" >
+        <p #text>Text</p>
+      </app-life-cycle>
+    }
+
+    <button (click)="boolean = !boolean">destroy component</button>
   `,
 })
 export class AppComponent {
   public number = 1;
-
+  public boolean = true;
 }
