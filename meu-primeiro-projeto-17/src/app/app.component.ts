@@ -65,13 +65,7 @@ import { LifeCycleComponent } from './components/life-cycle/life-cycle/life-cycl
     <app-life-cycle [myNumber]="number" />
   `,
 })
-export class AppComponent implements OnInit{
+export class AppComponent {
   public number = 1;
-
-  ngOnInit(): void {
-    setInterval(() => {
-      this.number++;
-    }, 1000)
-  }
 
 }
