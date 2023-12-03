@@ -1,3 +1,46 @@
+<!--
+  o ciclo de vida no angular é composto por uma serie de eventos que ocorrem durante 
+  o ciclo de vida de um componente ou diretiva, esses eventos permitem que você contro-
+  le o comportamento e a execução de codigo em diferentes estagios da vida de um compo-
+  nente, os principais metodos do ciclo de vida no angular são:
+
+  1 - ngOnChanges:
+    - para que serve: este metodo é chamado sempre que um valor de entrada (@input) de 
+    um componente muda.
+    - explicação: é util quando você precisa reagir a mudancas nos dados de entrada e 
+    atualizar o estado interno do componente com base nesses dados
+
+  2 - ngOnInit:
+    - para que serve: é chamado uma unica vez apos a inicialização do componente
+    - explicação: use este metodo para realizar inicializações que precisam ocorrer assim
+    que o componente é criado, como busccar dados inicias de um serviço
+    
+  3 - ngDoCheck:
+    - para que serve: é chamado durante cada cilco de detecção de mudancas
+    - explicação : é util quando você precisa realizar verificações manuais para detectar 
+    mudanças que não são detectadas automaticamente pelo angular, como alterações em objetos
+    ou array
+    
+  4 - ngAfterContentInit:
+    - para que serve: é chamado depois que o angular projeta o conteudo na visão do compo
+    nente 
+    - explicação: user este metodo quando precisar interagir com elementeos projetados no 
+    componente
+
+  5 - ngAfterContentChecked:
+    - para que serve: é chamado apos cada verificação do conteudo projetado
+    - explicação: util quando você precisa realizar ações a verificação do conteudo projetado,
+    como atualizar com base nesse conteudo 
+    
+  6 - ngAfterViewInit:
+    - para que serve: é chamado depois que o angular inicializa as visializaes do componente
+    e as visualizaçõe filhas
+    - explicações: user este metodo quando precisar interagir com elementes do DOM apos a ini-
+    cialização 
+
+
+-->
+
 <h2 #content>life cycle</h2>
 
 {{ myText() }}
