@@ -75,17 +75,6 @@ import { environment } from 'environments/environment';
   `,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AppComponent implements OnInit {
-
-  constructor() {
-    console.log(environment.env)
-  }
-
-  public number = 1;
-  public boolean = true;
-  
-  ngOnInit(): void {
-    setInterval(() => this.number++, 1000)
-  }
+export class AppComponent  {
 
 }
