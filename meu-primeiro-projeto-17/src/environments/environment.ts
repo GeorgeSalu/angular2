@@ -1,5 +1,5 @@
 /**
-  NO angular, as vairaives de ambiente são uma maneira de armazenar informações confidenciais
+  no angular, as variaveis de ambiente são uma maneira de armazenar informações confidenciais
   como senhas e chaves de api, sem expo-las no codigo fonte, elas são usadas para melhorar a s
   segurança e a manutenção das aplicações
   
@@ -10,12 +10,12 @@
   - environment.dev.ts: este arquivo contém as variaveis de ambiente para o ambiente de desenvolv-
   imento
 
-  vantaggens das variaveis de ambiente
+  vantagens das variaveis de ambiente
 
-  - melhoram a segurança das aplicações, por as informações confidenciais não são expostas no codigo
+  - melhoram a segurança das aplicações, pois as informações confidenciais não são expostas no codigo
   fonte
 
-  - facilitam a manutenção das aplicações, pors as variaveis de ambiente podem ser alteradas sem modificar
+  - facilitam a manutenção das aplicações, pois as variaveis de ambiente podem ser alteradas sem modificar
   o codigo fonte 
 
   desvantagens das variaveis de embiente
