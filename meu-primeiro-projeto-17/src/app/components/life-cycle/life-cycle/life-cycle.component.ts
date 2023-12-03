@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, DoCheck, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild, signal } from '@angular/core';
+import { AfterContentInit, AfterViewInit, Component, ContentChild, DoCheck, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild, signal } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 
 @Component({
@@ -8,7 +8,7 @@ import { FormBuilder } from '@angular/forms';
   templateUrl: './life-cycle.component.html',
   styleUrl: './life-cycle.component.scss'
 })
-export class LifeCycleComponent implements OnChanges, OnInit, DoCheck, AfterViewInit {
+export class LifeCycleComponent implements OnChanges, OnInit, DoCheck, AfterViewInit, AfterContentInit {
 
   @Input()
   public myNumber = 0;
@@ -16,6 +16,9 @@ export class LifeCycleComponent implements OnChanges, OnInit, DoCheck, AfterView
 
   @ViewChild('content')
   public content!: ElementRef;
+
+  @ContentChild('text')
+  public text!: ElementRef;
 
   // construtor ou inicializador
   constructor(private fb: FormBuilder) {}
@@ -35,10 +38,15 @@ export class LifeCycleComponent implements OnChanges, OnInit, DoCheck, AfterView
     console.log('ngDoCheck')
   }
   
-
   ngAfterViewInit(): void {
     console.log('ngAfterViewinit')
     console.log(this.content.nativeElement.innerText);
+    console.log(this.text.nativeElement.innerText);
+  }
+  
+  ngAfterContentInit(): void {
+    console.log('ngAfterContentInit');
+    console.log(this.text.nativeElement.innerText);
   }
 
 }

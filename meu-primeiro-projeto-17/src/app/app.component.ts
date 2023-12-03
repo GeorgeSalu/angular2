@@ -62,7 +62,9 @@ import { LifeCycleComponent } from './components/life-cycle/life-cycle/life-cycl
       </footer>  
     </app-content> -->
     <!-- <app-host-elements /> -->
-    <app-life-cycle [myNumber]="number" />
+    <app-life-cycle [myNumber]="number" >
+      <p #text>Text</p>
+    </app-life-cycle>
   `,
 })
 export class AppComponent {
