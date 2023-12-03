@@ -14,6 +14,7 @@ import { ReactiveFormsComponent } from './components/forms/reactive-forms/reacti
 import { ContentComponent } from './components/content/content.component';
 import { HostElementsComponent } from './components/host-elements/host-elements.component';
 import { LifeCycleComponent } from './components/life-cycle/life-cycle/life-cycle.component';
+import { environment } from 'environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -62,7 +63,7 @@ import { LifeCycleComponent } from './components/life-cycle/life-cycle/life-cycl
       </footer>  
     </app-content> -->
     <!-- <app-host-elements /> -->
-
+    <!--
     @if (boolean) {
       <app-life-cycle [myNumber]="number" >
         <p #text>Text</p>
@@ -70,10 +71,16 @@ import { LifeCycleComponent } from './components/life-cycle/life-cycle/life-cycl
     }
 
     <button (click)="boolean = !boolean">destroy component</button>
+  -->
   `,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent implements OnInit {
+
+  constructor() {
+    console.log(environment.env)
+  }
+
   public number = 1;
   public boolean = true;
   
