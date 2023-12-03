@@ -15,6 +15,7 @@ import { ContentComponent } from './components/content/content.component';
 import { HostElementsComponent } from './components/host-elements/host-elements.component';
 import { LifeCycleComponent } from './components/life-cycle/life-cycle/life-cycle.component';
 import { environment } from 'environments/environment';
+import { ConsumeServiceComponent } from '@components/consume-service/consume-service.component';
 
 @Component({
   selector: 'app-root',
@@ -34,7 +35,8 @@ import { environment } from 'environments/environment';
     ReactiveFormsComponent,
     ContentComponent,
     HostElementsComponent,
-    LifeCycleComponent],
+    LifeCycleComponent,
+    ConsumeServiceComponent],
   styles: [`
     h1 {
       color: red
@@ -74,6 +76,7 @@ import { environment } from 'environments/environment';
   -->
     <h1>Curso de angular</h1>
     <h2>Service</h2>
+    <app-consume-service />
   `,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
