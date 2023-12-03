@@ -63,5 +63,5 @@ import { HostElementsComponent } from './components/host-elements/host-elements.
   `,
 })
 export class AppComponent {
-  title = 'meu-primeiro-projeto-17';
+  
 }
