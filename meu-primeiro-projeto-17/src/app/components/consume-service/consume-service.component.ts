@@ -16,14 +16,11 @@ export class ConsumeServiceComponent implements OnInit {
   #apiService = inject(ApiService);
 
   ngOnInit(): void {
-    console.log(this.#apiService.name())
-
-    this.#apiService.name$.subscribe({
+    this.#apiService.httpListTask$().subscribe({
       next: (next) => console.log(next),
       error: (error) => console.log(error),
       complete: () => console.log('complete')
     })
-
   }
 
 }
