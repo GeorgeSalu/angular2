@@ -17,6 +17,13 @@ export class ConsumeServiceComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(this.#apiService.name())
+
+    this.#apiService.name$.subscribe({
+      next: (next) => console.log(next),
+      error: (error) => console.log(error),
+      complete: () => console.log('complete')
+    })
+
   }
 
 }
