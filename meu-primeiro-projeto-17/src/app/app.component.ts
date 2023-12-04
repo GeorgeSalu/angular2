@@ -14,7 +14,6 @@ import { ReactiveFormsComponent } from './components/forms/reactive-forms/reacti
 import { ContentComponent } from './components/content/content.component';
 import { HostElementsComponent } from './components/host-elements/host-elements.component';
 import { LifeCycleComponent } from './components/life-cycle/life-cycle/life-cycle.component';
-import { environment } from 'environments/environment';
 import { ConsumeServiceComponent } from '@components/consume-service/consume-service.component';
 
 @Component({
