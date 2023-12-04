@@ -20,11 +20,11 @@ export class ApiService {
   public name$ = new BehaviorSubject("george");
 
   #http = inject(HttpClient)
-  #utl = signal(environment.apiTask);
+  #url = signal(environment.apiTask);
 
   public httpListTask$(): Observable<Array<ITask>> {
-    return this.#http.get<Array<ITask>>(this.#utl())
+    return this.#http.get<Array<ITask>>(this.#url())
   }
 
-  
+
 }
