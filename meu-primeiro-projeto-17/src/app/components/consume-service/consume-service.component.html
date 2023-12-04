@@ -1,2 +1,9 @@
 <p>consume-service works!</p>
-<app-new-component />
+
+<ul>
+@for (item of getTask(); track item) {
+  <li>{{ item.id }} - {{ item.title }}</li>
+} @empty {
+  <li>nao existe dados</li>
+}
+</ul>
