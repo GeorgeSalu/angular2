@@ -1,2 +1,2 @@
 // aceita valores string ou numerico
-let values: string | number = "george"
+let value: string | number = "george"
