@@ -1,7 +1,9 @@
 /**
-  public - pode ser acessado tanto pela mesma classe, classes filhas e outras classes
-  protected - pode ser acessado pela mesma classe e classes filhas, não pode ser acessado por outras classes
-  private - pode ser acessada somente pela propria classe
+  getters e setters são usados para proteger seus dados 
+  especialmente na criação de classes.
+
+  para cada instancia de variavel, um metodo getter retorna seu valor
+  enquanto um metodo setter o define ou atualiza.
 
  */
 
