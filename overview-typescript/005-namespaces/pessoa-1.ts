@@ -1,3 +1,9 @@
+/*
+  os namespaces são uma froma especifica do typescript para organizar codigo,
+  namespaces são simplesmente objetos javascript nomeados no namespace global.
+  isso torna os namespaces uma construção muito simples de usar
+*/
+
 export namespace Pessoa1 {
   export let nome = "joao"
 
