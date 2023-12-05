@@ -1,6 +1,6 @@
 /**
   uma classe typescript é uma estrutura de programação orientada a objetos
-  que possui um conjuto de proprieadades e metodos.
+  que possui um conjunto de propriedades e metodos.
 
   a classe é um modelo para criar objetos, permitindo que você defina 
   uma estrutura com propriedades e comportamentos
