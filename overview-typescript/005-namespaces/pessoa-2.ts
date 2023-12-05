@@ -4,8 +4,7 @@
   isso torna os namespaces uma construção muito simples de usar
 */
 
-
-import { Pessoa1 } from "./pessoa-1"
+import { Pessoa1 } from "./module"
 
 console.log(Pessoa1.nome)
 console.log(Pessoa1.calc())
