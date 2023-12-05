@@ -1,5 +1,5 @@
 /*
-  os namespaces são uma froma especifica do typescript para organizar codigo,
+  os namespaces são uma forma especifica do typescript para organizar codigo,
   namespaces são simplesmente objetos javascript nomeados no namespace global.
   isso torna os namespaces uma construção muito simples de usar
 */
