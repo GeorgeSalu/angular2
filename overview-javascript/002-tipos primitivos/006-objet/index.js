@@ -1,3 +1,11 @@
+/*
+  Objeto: Tenis (Propriedade) "cadarço", "palmilha"
+  Objeto: Celular (Propriedade)
+  Objeto: Drone (Propriedade)
+
+  Propriedades / Atributos / Funcionalidades
+*/
+
 console.log({
   proprieadade: "Atributo",
 });
