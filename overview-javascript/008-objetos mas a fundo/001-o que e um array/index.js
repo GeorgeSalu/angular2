@@ -1,3 +1,11 @@
+/**
+ * Objeto: Tenis (propriedade) "cadarco", "palmilha"
+ * Objeto: Celular (Propriedade)
+ * Objeto: Drone (Propriedade)
+ * 
+ * Propriedade / Atributos / Funcionalidade
+ */
+
 let tenis = {
   tipo: "tenis de corrida",
   cardaco: "g",
