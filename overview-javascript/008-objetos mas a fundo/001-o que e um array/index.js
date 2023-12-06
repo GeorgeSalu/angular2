@@ -6,7 +6,7 @@
  * Propriedade / Atributos / Funcionalidade
  */
 
-let tenis = {
+let Tenis = {
   tipo: "tenis de corrida",
   cardaco: "g",
   estoque: false,
@@ -38,6 +38,6 @@ let tenis = {
   }
 }
 
-console.log(tenis);
-console.log(tenis.tipo);
-console.log(tenis.tamanho);
+console.log(Tenis);
+console.log(Tenis.tipo);
+console.log(Tenis.tamanho);
