@@ -6,6 +6,12 @@ const pedidos = [
   { id: 55, nome: "José", alimento: "Pizza", bebida: "Refrigerante" },
 ];
 
+/**
+ * 
+ * como o nome ja diz, esse metodo deve ser utilizado quando temos a ncessidade de filter no lista
+ * 
+ */
+
 const filterRefri = pedidos.filter((element, index) => {
   return element.bebida === "Refrigerante";
 })
