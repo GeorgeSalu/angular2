@@ -1,3 +1,10 @@
+/**
+ * 
+ * slice = pega os dados dentro de um range sem quebrar o array
+ * splice = remove os dados do array dentro de um range
+ * 
+ */
+
 let arr = [
   { nome: "dener", tel: "(99) 9999 9999" },
   { nome: "mozao", tel: "(99) 9999 9999" },
