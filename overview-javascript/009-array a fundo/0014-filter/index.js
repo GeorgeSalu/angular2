@@ -8,7 +8,7 @@ const pedidos = [
 
 /**
  * 
- * como o nome ja diz, esse metodo deve ser utilizado quando temos a ncessidade de filter no lista
+ * como o nome ja diz, esse metodo deve ser utilizado quando temos a necessidade de filtrar nossa lista
  * 
  */
 
