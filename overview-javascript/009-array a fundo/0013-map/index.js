@@ -6,6 +6,12 @@ const pedidos = [
   { id: 55, nome: "José", alimento: "Pizza", bebida: "Refrigerante" },
 ];
 
+/**
+ * 
+ * o metodo map alem de interar todo o array ele é muito bom para editar o iterador
+ * 
+ */
+
 pedidos.map((element, index) => {
   if(element.id === 29) {
     return (element.alimento = "kibe")
