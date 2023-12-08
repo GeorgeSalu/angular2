@@ -6,6 +6,10 @@ const pedidos = [
   { id: 55, nome: "José", alimento: "Pizza", bebida: "Refrigerante" },
 ];
 
+/**
+ * o some pergunta se apenas 1 dos valores do array equivale a sua condição
+ */
+
 const existeAlimento = pedidos.some((element, index) => {
   return element.alimento === "Pizza"
 })
