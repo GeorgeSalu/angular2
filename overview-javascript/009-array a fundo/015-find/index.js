@@ -6,6 +6,10 @@ const pedidos = [
   { id: 55, nome: "José", alimento: "Pizza", bebida: "Refrigerante" },
 ];
 
+/**
+ * ele procura e retorna o primeiro valor encontrado da array
+ */
+
 const findId = pedidos.find((element, index) => {
   return element.id === 29
 })
