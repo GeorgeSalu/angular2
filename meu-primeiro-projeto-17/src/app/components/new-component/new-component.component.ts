@@ -1,5 +1,4 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { ApiService } from 'app/services/api.service';
 
 @Component({
   selector: 'app-new-component',
