@@ -27,8 +27,8 @@ export class ApiService {
     return this.#setListTask.asReadonly();
   }
 
-  public httpListTask$(): Observable<Array<ITask>> {
-    return this.#http.get<Array<ITask>>(this.#url()).pipe(
+  public httpListTask$(): Observable<ITask[]> {
+    return this.#http.get<ITask[]>(this.#url()).pipe(
       shareReplay(),
       tap((res) => this.#setListTask.set(res))
     )
