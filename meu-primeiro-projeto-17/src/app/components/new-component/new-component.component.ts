@@ -10,8 +10,6 @@ import { ApiService } from 'app/services/api.service';
 })
 export class NewComponent implements OnInit{
 
-  public name = 'new component';
-
   ngOnInit(): void {
   }
 
