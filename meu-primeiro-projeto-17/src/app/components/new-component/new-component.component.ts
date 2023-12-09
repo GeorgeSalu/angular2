@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-new-component',
@@ -8,6 +8,8 @@ import { Component, OnInit, inject } from '@angular/core';
   styleUrl: './new-component.component.scss'
 })
 export class NewComponent implements OnInit{
+
+  public name = 'new component';
 
   ngOnInit(): void {
   }
