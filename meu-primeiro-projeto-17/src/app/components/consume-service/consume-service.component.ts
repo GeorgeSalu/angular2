@@ -15,9 +15,11 @@ export class ConsumeServiceComponent implements OnInit {
   #apiService = inject(ApiService);
 
   public getListTask = this.#apiService.getListTask;
+  public getTaskId = this.#apiService.getTaskId;
 
   ngOnInit(): void {
     this.#apiService.httpListTask$().subscribe();
+    this.#apiService.httpTaskId$("ItNeQBl0nMRwOvP1Optn").subscribe();
   }
 
 }

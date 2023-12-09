@@ -1,6 +1,7 @@
 <p>consume-service works!</p>
 
-<ul>
+
+<h3>Get List</h3>
 @if (getListTask(); as data) {
   @for (item of data; track item) {
     <li>{{ item.id }} - {{ item.title }}</li>
@@ -10,4 +11,8 @@
 } @else {
   <li>Loading</li>
 }
-</ul>
+
+<h3>get item id</h3>
+@if (getTaskId(); as data) {
+  <p>get por id : {{ data.id }} - {{ data.title }}</p>
+}
