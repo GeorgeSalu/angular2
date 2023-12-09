@@ -2,7 +2,7 @@
 
 
 <h3>Get List</h3>
-@if (getListTask(); as data) {
+@if (getTaskList(); as data) {
   @for (item of data; track item) {
     <li>{{ item.id }} - {{ item.title }}</li>
   } @empty {
