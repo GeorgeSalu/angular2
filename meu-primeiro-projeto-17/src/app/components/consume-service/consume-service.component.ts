@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit, inject, signal } from '@angular/core';
 import { ApiService } from 'app/services/api.service';
+import { concatMap } from 'rxjs';
 
 @Component({
   selector: 'app-consume-service',
@@ -23,10 +24,10 @@ export class ConsumeServiceComponent implements OnInit {
   }
 
   public httpTaskCreate(title: string) {
-    return this.#apiService.httpTaskCreate$(title).subscribe({
-      next: (next) => this.#apiService.httpListTask$().subscribe(),
-      error: (error) => console.log(error)
-    });
+    return this.#apiService
+      .httpTaskCreate$(title)
+      .pipe(concatMap(() => this.#apiService.httpListTask$()))
+      .subscribe();
   }
 
 }
