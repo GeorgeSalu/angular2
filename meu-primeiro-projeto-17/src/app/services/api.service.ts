@@ -46,5 +46,17 @@ export class ApiService {
     )
   }
 
+  #setTaskCreate = signal<ITask | null>(null);
+  get getTaskCreate() {
+    return this.#setTaskId.asReadonly();
+  }
+
+  public httpTaskCreate$(title: string): Observable<ITask> {
+    return this.#http.post<ITask>(this.#url(), {title}).pipe(
+      shareReplay(),
+      tap((res) => this.#setTaskCreate.set(res))
+    )
+  }
+
 
 }

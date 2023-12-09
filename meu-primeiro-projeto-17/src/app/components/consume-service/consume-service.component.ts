@@ -22,4 +22,11 @@ export class ConsumeServiceComponent implements OnInit {
     this.#apiService.httpTaskId$("ItNeQBl0nMRwOvP1Optn").subscribe();
   }
 
+  public httpTaskCreate(title: string) {
+    return this.#apiService.httpTaskCreate$(title).subscribe({
+      next: (next) => this.#apiService.httpListTask$().subscribe(),
+      error: (error) => console.log(error)
+    });
+  }
+
 }

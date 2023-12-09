@@ -16,3 +16,7 @@
 @if (getTaskId(); as data) {
   <p>get por id : {{ data.id }} - {{ data.title }}</p>
 }
+
+<h3>post create</h3>
+<input type="text" #createTitle placeholder="add title" />
+<button (click)="httpTaskCreate(createTitle.value)">create</button>
