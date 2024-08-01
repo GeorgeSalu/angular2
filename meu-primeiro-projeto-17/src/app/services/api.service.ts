@@ -1,7 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable, inject, signal } from '@angular/core';
 import { environment } from 'environments/environment';
-import { BehaviorSubject, Observable, shareReplay, tap } from 'rxjs';
+import { BehaviorSubject, catchError, Observable, shareReplay, tap, throwError } from 'rxjs';
 
 interface ITask {
   id: string,
@@ -40,11 +40,21 @@ export class ApiService {
     return this.#setTaskId.asReadonly();
   }
 
+  #setTaskIdError = signal<ITask | null>(null);
+  get getTaskIdError() {
+    return this.#setTaskIdError.asReadonly();
+  }
+
   public httpTaskId$(id: string): Observable<ITask> {
+    this.#setTaskIdError.set(null);
     this.#setTaskId.set(null);
     return this.#http.get<ITask>(`${this.#url()}/${id}`).pipe(
       shareReplay(),
-      tap((res) => this.#setTaskId.set(res))
+      tap((res) => this.#setTaskId.set(res)),
+      catchError((error: HttpErrorResponse) => {
+        this.#setTaskIdError.set(error.error.message)
+        return throwError(() => error)
+      })
     )
   }
 
