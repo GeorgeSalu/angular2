@@ -58,7 +58,7 @@ export class ApiService {
     )
   }
 
-  public httpTaskDelete(id: string): Observable<void> {
+  public httpTaskDelete$(id: string): Observable<void> {
     return this.#http
       .delete<void>(`${this.#url()}/${id}`, {})
       .pipe(shareReplay());

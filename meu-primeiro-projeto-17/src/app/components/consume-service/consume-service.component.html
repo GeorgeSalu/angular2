@@ -4,7 +4,7 @@
 <h3>Get List</h3>
 @if (getTaskList(); as data) {
   @for (item of data; track item) {
-    <li>{{ item.id }} - {{ item.title }}</li>
+    <li>{{ item.id }} - {{ item.title }} - <button (click)="httpTaskDelete(item.id)">delete</button></li>
   } @empty {
     <li>sem dados carregados</li>
   }
