@@ -64,6 +64,7 @@ export class ApiService {
   }
 
   public httpTaskCreate$(title: string): Observable<ITask> {
+    this.#setTaskCreateError.set(null);
     return this.#http.post<ITask>(this.#url(), { title }).pipe(
       shareReplay(),
       catchError((error: HttpErrorResponse) => {
@@ -73,16 +74,37 @@ export class ApiService {
     )
   }
 
+  #setTaskUpdateError = signal<ITask | null>(null);
+  get getTaskUpdateError() {
+    return this.#setTaskUpdateError.asReadonly();
+  }
+
   public httpTaskUpdate$(id: string, title: string): Observable<ITask> {
+    this.#setTaskUpdateError.set(null);
     return this.#http.patch<ITask>(`${this.#url()}/${id}`, { title }).pipe(
-      shareReplay()
+      shareReplay(),
+      catchError((error: HttpErrorResponse) => {
+        this.#setTaskUpdateError.set(error.error.message);
+        return throwError(() => error);
+      })
     )
   }
 
+
+  #setTaskDeleteError = signal<ITask | null>(null);
+  get getTaskDeleteError() {
+    return this.#setTaskDeleteError.asReadonly();
+  }
   public httpTaskDelete$(id: string): Observable<void> {
     return this.#http
       .delete<void>(`${this.#url()}/${id}`, {})
-      .pipe(shareReplay());
+      .pipe(
+        shareReplay(),
+        catchError((error: HttpErrorResponse) => {
+          this.#setTaskDeleteError.set(error.error.message);
+          return throwError(() => error);
+        })
+      );
   }
 
 

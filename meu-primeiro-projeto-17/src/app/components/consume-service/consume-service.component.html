@@ -30,3 +30,6 @@
 <input type="text" #updateId placeholder="add id" />
 <input type="text" #updateTitle placeholder="add title" />
 <button (click)="httpTaskUpdate(updateId.value, updateTitle.value)">update</button>
+@if (getTaskUpdateError()) {
+  <p>{{ getTaskUpdateError() }}</p>
+}
