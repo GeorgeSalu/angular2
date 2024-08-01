@@ -58,9 +58,18 @@ export class ApiService {
     )
   }
 
+  #setTaskCreateError = signal<ITask | null>(null);
+  get getTaskCreateError() {
+    return this.#setTaskCreateError.asReadonly();
+  }
+
   public httpTaskCreate$(title: string): Observable<ITask> {
     return this.#http.post<ITask>(this.#url(), { title }).pipe(
-      shareReplay()
+      shareReplay(),
+      catchError((error: HttpErrorResponse) => {
+        this.#setTaskCreateError.set(error.error.message);
+        return throwError(() => error);
+      })
     )
   }
 
