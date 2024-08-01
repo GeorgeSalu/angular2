@@ -96,6 +96,7 @@ export class ApiService {
     return this.#setTaskDeleteError.asReadonly();
   }
   public httpTaskDelete$(id: string): Observable<void> {
+    this.#setTaskDeleteError.set(null)
     return this.#http
       .delete<void>(`${this.#url()}/${id}`, {})
       .pipe(
