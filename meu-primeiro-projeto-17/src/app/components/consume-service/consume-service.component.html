@@ -20,3 +20,8 @@
 <h3>post create</h3>
 <input type="text" #createTitle placeholder="add title" />
 <button (click)="httpTaskCreate(createTitle.value)">create</button>
+
+<h3>Patch update</h3>
+<input type="text" #updateId placeholder="add id" />
+<input type="text" #updateTitle placeholder="add title" />
+<button (click)="httpTaskUpdate(updateId.value, updateTitle.value)">create</button>
