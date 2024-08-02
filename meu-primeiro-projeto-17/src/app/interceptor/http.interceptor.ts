@@ -7,6 +7,7 @@ export const httpInterceptor: HttpInterceptorFn = (req, next) => {
 
   return next(reqClone).pipe(
     shareReplay(),
+    // retry({ count: 2, delay: 1000 }) se der erro faz 2 novas tentativas 
     retry({ count: 2, delay: 1000 })
   );
 };
