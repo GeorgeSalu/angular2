@@ -1,4 +1,4 @@
-import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable, inject, signal } from '@angular/core';
 import { environment } from 'environments/environment';
 import { BehaviorSubject, catchError, Observable, shareReplay, tap, throwError } from 'rxjs';
@@ -29,8 +29,10 @@ export class ApiService {
 
   public httpTaskList$(): Observable<ITask[]> {
     const headers = new HttpHeaders().set('x-vida-full-stack', 'dev');
+    const params = new HttpParams().set('page', 1);
+
     this.#setTaskList.set(null);
-    return this.#http.get<ITask[]>(this.#url(), { headers }).pipe(
+    return this.#http.get<ITask[]>(this.#url(), { headers, params }).pipe(
       shareReplay(),
       tap((res) => this.#setTaskList.set(res))
     )
