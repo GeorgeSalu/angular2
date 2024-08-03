@@ -23,6 +23,9 @@ export default class ServicosPrestadosComponent implements OnInit {
   ngOnInit(): void {
     console.log(this.#route.snapshot.params['id']);
     this.#route.params.subscribe((res) => console.log(res['id']))
+
+    console.log(this.#route.snapshot.queryParamMap.get('name'))
+    console.log(this.#route.snapshot.queryParamMap.get('age'))
   }
 
 }
