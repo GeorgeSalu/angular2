@@ -16,7 +16,7 @@ export const routes: Routes = [
             {
                 path: 'sobre',
                 title: 'Sobre da pagina',
-                component: SobreComponent
+                loadComponent: () => import('./pages/sobre/sobre.component').then((p) => p.SobreComponent),
             },
             {
                 path: 'servicos/:id',
