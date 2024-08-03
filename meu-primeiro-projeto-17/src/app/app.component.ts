@@ -20,14 +20,14 @@ import { ConsumeServiceComponent } from '@components/consume-service/consume-ser
   selector: 'app-root',
   standalone: true,
   imports: [
-    CommonModule, 
-    RouterOutlet, 
-    NewComponent, 
+    CommonModule,
+    RouterOutlet,
+    NewComponent,
     TamplateBindingComponent,
-    TemplateVariablesComponent, 
-    TemplateControlFlowComponent, 
+    TemplateVariablesComponent,
+    TemplateControlFlowComponent,
     TemplateDeferableViewsComponent,
-    SignalsComponent, 
+    SignalsComponent,
     PaiOuMaeComponent,
     AngularPipesComponent,
     TemplateDrivenFormsComponent,
@@ -72,13 +72,17 @@ import { ConsumeServiceComponent } from '@components/consume-service/consume-ser
     }
 
     <button (click)="boolean = !boolean">destroy component</button>
-  -->
+  
     <h1>Curso de angular</h1>
     <h2>Service</h2>
     <app-consume-service />
+    -->
+    <h1>curso angular</h1>
+    <h2>rotas</h2>
+    <router-outlet></router-outlet>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AppComponent  {
+export class AppComponent {
 
 }
