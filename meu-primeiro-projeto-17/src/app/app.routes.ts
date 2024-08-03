@@ -11,7 +11,7 @@ export const routes: Routes = [
             {
                 path: '',
                 title: 'Home da pagina',
-                component: HomeComponent
+                loadComponent: () => import('./pages/home/home.component').then((p) => p.HomeComponent),
             },
             {
                 path: 'sobre',
@@ -21,12 +21,12 @@ export const routes: Routes = [
             {
                 path: 'servicos/:id',
                 title: 'Servicos da pagina',
-                component: ServicosPrestadosComponent
+                loadComponent: () => import('./pages/servicos-prestados/servicos-prestados.component').then((p) => p.ServicosPrestadosComponent),
             },
         ]
     },
     {
         path: '**',
-        component: NotFoundComponent
+        loadComponent: () => import('./pages/not-found/not-found.component').then((p) => p.NotFoundComponent),
     }
 ];
