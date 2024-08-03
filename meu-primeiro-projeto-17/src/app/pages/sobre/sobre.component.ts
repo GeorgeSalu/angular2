@@ -9,6 +9,6 @@ import { CommonModule } from '@angular/common';
   styleUrl: './sobre.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SobreComponent {
+export default class SobreComponent {
 
 }

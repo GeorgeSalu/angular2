@@ -9,6 +9,6 @@ import { CommonModule } from '@angular/common';
   styleUrl: './not-found.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class NotFoundComponent {
+export default class NotFoundComponent {
 
 }
