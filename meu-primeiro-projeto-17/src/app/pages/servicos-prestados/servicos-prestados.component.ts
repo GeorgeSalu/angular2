@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, Input, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 
@@ -12,11 +12,17 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ServicosPrestadosComponent implements OnInit {
 
-
   #route = inject(ActivatedRoute);
 
+
+  public getId = signal<null | string>(null);
+  @Input() set id(id: string) {
+    this.getId.set(id)
+  }
+
   ngOnInit(): void {
-    console.log(this.#route.snapshot.params['id'])
+    console.log(this.#route.snapshot.params['id']);
+    this.#route.params.subscribe((res) => console.log(res['id']))
   }
 
 }
