@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, inject, Input, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-servicos-prestados',
@@ -13,6 +13,7 @@ import { ActivatedRoute } from '@angular/router';
 export default class ServicosPrestadosComponent implements OnInit {
 
   #route = inject(ActivatedRoute);
+  #router = inject(Router);
 
 
   public getId = signal<null | string>(null);
@@ -26,6 +27,8 @@ export default class ServicosPrestadosComponent implements OnInit {
 
     console.log(this.#route.snapshot.queryParamMap.get('name'))
     console.log(this.#route.snapshot.queryParamMap.get('age'))
+
+    this.#router.navigate(['/curso'])
   }
 
 }
