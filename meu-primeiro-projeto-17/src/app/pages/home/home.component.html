@@ -1,3 +1,11 @@
-<a routerLink="" routerLinkActive="active">Home</a>
+<h3>Home</h3>
+
+<a 
+    [routerLink]="['']" 
+    routerLinkActive="active"
+    ariaCurrentWhenActive="page"
+>
+    Home
+</a>
 <br>
-<a routerLink="/sobre">Sobre</a>
+<a [routerLink]="['/sobre']" routerLinkActive="active">Sobre</a>
