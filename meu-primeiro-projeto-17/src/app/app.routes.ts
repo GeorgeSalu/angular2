@@ -6,14 +6,17 @@ import { ServicosPrestadosComponent } from './pages/servicos-prestados/servicos-
 export const routes: Routes = [
     {
         path: '',
+        title: 'Home da pagina',
         component: HomeComponent
     },
     {
         path: 'sobre',
+        title: 'Sobre da pagina',
         component: SobreComponent
     },
     {
         path: 'servicos',
+        title: 'Servicos da pagina',
         component: ServicosPrestadosComponent
     }
 ];
