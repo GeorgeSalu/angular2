@@ -15,6 +15,7 @@ import { ContentComponent } from './components/content/content.component';
 import { HostElementsComponent } from './components/host-elements/host-elements.component';
 import { LifeCycleComponent } from './components/life-cycle/life-cycle/life-cycle.component';
 import { ConsumeServiceComponent } from '@components/consume-service/consume-service.component';
+import { TranslateComponent } from '@components/translate/translate.component';
 
 @Component({
   selector: 'app-root',
@@ -35,6 +36,7 @@ import { ConsumeServiceComponent } from '@components/consume-service/consume-ser
     ContentComponent,
     HostElementsComponent,
     LifeCycleComponent,
+    TranslateComponent,
     ConsumeServiceComponent],
   styles: [`
     h1 {
@@ -76,10 +78,14 @@ import { ConsumeServiceComponent } from '@components/consume-service/consume-ser
     <h1>Curso de angular</h1>
     <h2>Service</h2>
     <app-consume-service />
-    -->
+    
     <h1>curso angular</h1>
     <h2>rotas</h2>
     <router-outlet></router-outlet>
+    -->
+    <h1>curso de angular</h1>
+    <h2>translate</h2>
+    <app-translate />
   `,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
