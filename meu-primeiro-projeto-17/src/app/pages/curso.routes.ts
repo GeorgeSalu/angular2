@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { canActivateGuard } from 'app/guard/can-activate.guard';
+import { canDeactivateGuard } from 'app/guard/can-deactivate.guard';
 
 export const cursoRoutes: Routes = [
     {
@@ -17,6 +18,7 @@ export const cursoRoutes: Routes = [
         path: 'servicos/:id',
         title: 'Servicos da pagina',
         loadComponent: () => import('./servicos-prestados/servicos-prestados.component'),
+        canDeactivate: [canDeactivateGuard]
     },
 
 ];
