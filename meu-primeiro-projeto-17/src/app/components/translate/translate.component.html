@@ -1,2 +1,7 @@
 <p>translate</p>
-{{ 'language' | translate }}
+{{ 'pages.translate.text.language' | translate }}
+
+<hr>
+
+<button (click)="translate('pt-br')">pt br</button>
+<button (click)="translate('en')">en</button>
