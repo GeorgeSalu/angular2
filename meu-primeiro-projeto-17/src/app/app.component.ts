@@ -16,6 +16,7 @@ import { HostElementsComponent } from './components/host-elements/host-elements.
 import { LifeCycleComponent } from './components/life-cycle/life-cycle/life-cycle.component';
 import { ConsumeServiceComponent } from '@components/consume-service/consume-service.component';
 import { TranslateComponent } from '@components/translate/translate.component';
+import { OptImageComponent } from '@components/opt-image/opt-image.component';
 
 @Component({
   selector: 'app-root',
@@ -37,6 +38,7 @@ import { TranslateComponent } from '@components/translate/translate.component';
     HostElementsComponent,
     LifeCycleComponent,
     TranslateComponent,
+    OptImageComponent,
     ConsumeServiceComponent],
   styles: [`
     h1 {
@@ -82,10 +84,14 @@ import { TranslateComponent } from '@components/translate/translate.component';
     <h1>curso angular</h1>
     <h2>rotas</h2>
     <router-outlet></router-outlet>
-    -->
+    
     <h1>curso de angular</h1>
     <h2>translate</h2>
     <app-translate />
+    -->
+    <h1>Curso de angular</h1>
+    <h2>otimizacao de imagens</h2>
+    <app-opt-image />
   `,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
