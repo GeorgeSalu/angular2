@@ -8,6 +8,7 @@ import localePt from '@angular/common/locales/pt'
 import { registerLocaleData } from '@angular/common';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { httpInterceptor } from './interceptor/http.interceptor';
+import { provideTranslate } from './app.translate';
 
 registerLocaleData(localePt)
 
@@ -22,5 +23,6 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(
       withInterceptors([httpInterceptor])
     ),
+    provideTranslate(),
     { provide: LOCALE_ID, useValue: 'pt-BR' }]
 };
