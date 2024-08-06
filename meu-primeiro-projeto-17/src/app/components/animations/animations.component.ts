@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { state, style, trigger } from '@angular/animations';
+import { animate, state, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-animations',
@@ -16,7 +16,10 @@ import { state, style, trigger } from '@angular/animations';
       })),
       state('move-right', style({
         transform: 'scale(0.7) translateX(300px) rotate(360deg)'
-      }))
+      })),
+      transition('move-left <=> move-right', animate('1s')),
+      transition('* => move-right', animate('1s 2s')),
+      transition('* => move-leftt', animate('1s'))
     ])
   ]
 })
