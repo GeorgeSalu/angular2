@@ -17,6 +17,7 @@ import { LifeCycleComponent } from './components/life-cycle/life-cycle/life-cycl
 import { ConsumeServiceComponent } from '@components/consume-service/consume-service.component';
 import { TranslateComponent } from '@components/translate/translate.component';
 import { OptImageComponent } from '@components/opt-image/opt-image.component';
+import { AnimationsComponent } from "./components/animations/animations.component";
 
 @Component({
   selector: 'app-root',
@@ -39,7 +40,9 @@ import { OptImageComponent } from '@components/opt-image/opt-image.component';
     LifeCycleComponent,
     TranslateComponent,
     OptImageComponent,
-    ConsumeServiceComponent],
+    ConsumeServiceComponent,
+    AnimationsComponent
+  ],
   styles: [`
     h1 {
       color: red
@@ -88,10 +91,13 @@ import { OptImageComponent } from '@components/opt-image/opt-image.component';
     <h1>curso de angular</h1>
     <h2>translate</h2>
     <app-translate />
-    -->
+    
     <h1>Curso de angular</h1>
     <h2>otimizacao de imagens</h2>
     <app-opt-image />
+    -->
+    <h1>curso de angular</h1>
+    <app-animations />
   `,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
