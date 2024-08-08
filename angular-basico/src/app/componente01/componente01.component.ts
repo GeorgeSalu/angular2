@@ -9,4 +9,7 @@ import { Component } from '@angular/core';
 })
 export class Componente01Component {
 
+  nome: string = 'george';
+  idade: number = 30;
+
 }
