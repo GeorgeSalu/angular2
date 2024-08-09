@@ -9,8 +9,10 @@ import { Component } from '@angular/core';
 })
 export class Componente03Component {
 
+  // variavel de imagem
   imagem: string = 'assets/dia.jpg';
 
+  // funcao para alterar a imagem
   alterarImagem() {
     if (this.imagem === 'assets/dia.jpg') {
       this.imagem = 'assets/noite.jpg'
