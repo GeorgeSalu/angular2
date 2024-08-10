@@ -1,0 +1,5 @@
+<h1 [ngStyle]="{ 'color': condicao ? 'green' : 'red' }">aprendendo a diretiva ngStyle</h1>
+
+<ul>
+    <li *ngFor="let l of lista" [ngStyle]="{ 'color': l == 'aprovado' ? 'green': 'red' }">{{ l }}</li>
+</ul>
