@@ -3,3 +3,7 @@
 <ul>
     <li *ngFor="let l of lista" [ngStyle]="{ 'color': l == 'aprovado' ? 'green': 'red' }">{{ l }}</li>
 </ul>
+
+<ul>
+    <li *ngFor="let l of lista" [ngClass]="l == 'aprovado' ? 'fontVerde': 'fontVermelha'" >{{ l }}</li>
+</ul>
