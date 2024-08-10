@@ -9,4 +9,6 @@ import { Component } from '@angular/core';
 })
 export class Componente08Component {
 
+  media: number = 3;
+
 }
