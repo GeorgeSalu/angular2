@@ -10,8 +10,10 @@ import { Component } from '@angular/core';
 })
 export class Componente07Component {
 
+  // variavel logica
   condicao: boolean = false;
 
+  // lista de aprovados e reprovados
   lista: string[] = ['aprovado', 'aprovado', 'reprovado'];
 
 }
