@@ -10,6 +10,7 @@ import { Component } from '@angular/core';
 })
 export class Componente06Component {
 
+  // variavel contendo uma linguagem
   linguagem: string = 'html';
 
 }
