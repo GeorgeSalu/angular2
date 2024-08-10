@@ -10,8 +10,10 @@ import { Component } from '@angular/core';
 })
 export class Componente04Component {
 
+  // variavel para exibir ou ocultar o quadrado
   exibir: boolean = false;
 
+  // funcao para exibir ou ocultar o quadrado
   acao() {
     if (this.exibir === true) {
       this.exibir = false;
