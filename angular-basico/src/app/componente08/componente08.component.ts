@@ -9,8 +9,10 @@ import { Component } from '@angular/core';
 })
 export class Componente08Component {
 
+  // variavel media
   media: number = 3;
 
+  // vetor
   nomes: string[] = ['ralf', 'ana', 'danilo', 'camila']
 
 }
