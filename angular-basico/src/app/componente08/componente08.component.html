@@ -5,3 +5,7 @@
 } @else {
     <p>reprovado</p>
 }
+
+@for (n of nomes; track $index) {
+    <p>{{ $index }} - {{ n }}</p>
+}

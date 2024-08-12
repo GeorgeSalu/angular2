@@ -11,4 +11,6 @@ export class Componente08Component {
 
   media: number = 3;
 
+  nomes: string[] = ['ralf', 'ana', 'danilo', 'camila']
+
 }
