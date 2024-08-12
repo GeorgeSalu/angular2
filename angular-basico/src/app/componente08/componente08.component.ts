@@ -15,4 +15,5 @@ export class Componente08Component {
   // vetor
   nomes: string[] = ['ralf', 'ana', 'danilo', 'camila']
 
+  linguagem: string = 'html';
 }
