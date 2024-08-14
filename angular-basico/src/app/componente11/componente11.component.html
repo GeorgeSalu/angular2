@@ -24,10 +24,10 @@
     
     <!-- cidade -->
     @if (formulario.get('cidade').hasError('required') && formulario.get('cidade').touched) {
-        <p class="alert alert-warning">O campo nome é obrigatorio</p>
+        <p class="alert alert-warning">O campo cidade é obrigatorio</p>
     }
     @if (formulario.get('cidade').hasError('minlength') && formulario.get('cidade').touched) {
-        <p class="alert alert-warning">O campo nome precisa conter pelo menos 3 caracteres</p>
+        <p class="alert alert-warning">O campo cidade precisa conter pelo menos 3 caracteres</p>
     }
     <input type="text" formControlName="cidade" placeholder="Cidade" class="form-control">
 
