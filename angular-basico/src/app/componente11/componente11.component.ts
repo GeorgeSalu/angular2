@@ -10,6 +10,7 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 })
 export class Componente11Component {
 
+  // objeto do formulario
   formulario = new FormGroup({
     nome: new FormControl(''),
     idade: new FormControl(null),
