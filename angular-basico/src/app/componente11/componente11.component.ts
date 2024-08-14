@@ -34,7 +34,7 @@ export class Componente11Component {
     this.formulario.reset();
 
     // visualizacao via console
-    console.table(this.vetor)
+    // console.table(this.vetor)
   }
 
 }
