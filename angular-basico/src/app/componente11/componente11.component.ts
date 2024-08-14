@@ -17,4 +17,7 @@ export class Componente11Component {
     cidade: new FormControl('', [Validators.required, Validators.minLength(3)]),
   })
 
+  // visibilidade dos botoes
+  btnCadastrar: boolean = true;
+
 }
