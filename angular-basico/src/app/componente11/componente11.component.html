@@ -53,6 +53,14 @@
         </tr>
     </thead>
     <tbody>
-
+        <tr *ngFor="let v of vetor; index as indice">
+            <td>{{ indice }}</td>
+            <td>{{ v.nome }}</td>
+            <td>{{ v.idade }}</td>
+            <td>{{ v.cidade }}</td>
+            <td>
+                <button class="btn btn-primary">Selecionar</button>
+            </td>
+        </tr>
     </tbody>
 </table>
