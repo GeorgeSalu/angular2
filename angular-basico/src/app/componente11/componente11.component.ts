@@ -53,6 +53,7 @@ export class Componente11Component {
       cidade: this.vetor[indice].cidade
     });
 
+    //visibilidade dos botoes
     this.btnCadastrar = false
 
   }
