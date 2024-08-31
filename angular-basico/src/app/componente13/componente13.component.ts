@@ -15,6 +15,7 @@ export class Componente13Component implements OnInit {
   // vetor 
   vetor: Produto[] = [];
 
+  // visibilidade dos botoes
   btnCadastrar: boolean = true;
 
   // construtor
