@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Produto } from '../modelo/Produto';
 
 @Injectable({
   providedIn: 'root'
@@ -11,4 +13,10 @@ export class ProdutoService {
 
   // primeiro metodo a ser executado quando referenciada a clase de servico
   constructor(private http: HttpClient) { }
+
+  // metodo para selecionar produtos
+  selecionar(): Observable<Produto[]> {
+    return this.http.get<Produto[]>(this.url);
+  }
+
 }
