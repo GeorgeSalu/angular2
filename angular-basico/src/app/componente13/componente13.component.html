@@ -1,7 +1,9 @@
-<form>
-    <input type="number" class="form-control" readonly >
-    <input type="text"   class="form-control" placeholder="Nome">
-    <input type="number" class="form-control" placeholder="Valor">
+{{ formulario.value | json }}
+
+<form [formGroup]="formulario">
+    <input type="number" class="form-control" formControlName="id" readonly >
+    <input type="text"   class="form-control" formControlName="nome" placeholder="Nome">
+    <input type="number" class="form-control" formControlName="valor" placeholder="Valor">
 
     <input type="button" class="btn btn-primary" value="Cadastrar" *ngIf="btnCadastrar"> 
     <input type="button" class="btn btn-primary" value="Alterar"   *ngIf="!btnCadastrar"> 
