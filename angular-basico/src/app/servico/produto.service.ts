@@ -29,4 +29,8 @@ export class ProdutoService {
     return this.http.put<Produto>(`${this.url}/${obj.id}`, obj);
   }
 
+  remover(id: number): Observable<any> {
+    return this.http.delete<any>(`${this.url}/${id}`)
+  }
+
 }
