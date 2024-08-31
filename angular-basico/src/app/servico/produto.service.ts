@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,5 +6,9 @@ import { Injectable } from '@angular/core';
 })
 export class ProdutoService {
 
-  constructor() { }
+  // url da api
+  url: string = "http://localhost:3000/produtos"
+
+  // primeiro metodo a ser executado quando referenciada a clase de servico
+  constructor(private http: HttpClient) { }
 }
