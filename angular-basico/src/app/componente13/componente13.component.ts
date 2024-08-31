@@ -15,6 +15,8 @@ export class Componente13Component implements OnInit {
   // vetor 
   vetor: Produto[] = [];
 
+  btnCadastrar: boolean = true;
+
   // construtor
   constructor(private servico: ProdutoService) { }
 
