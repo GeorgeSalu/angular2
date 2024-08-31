@@ -35,7 +35,10 @@ export class Componente13Component implements OnInit {
 
   // metodo para selecionar todos os produtos
   selecionar() {
-    this.servico.selecionar().subscribe(retorno => { this.vetor = retorno })
+    this.servico.selecionar()
+      .subscribe(retorno => {
+        this.vetor = retorno
+      })
   }
 
 }
