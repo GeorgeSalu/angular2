@@ -24,4 +24,9 @@ export class ProdutoService {
     return this.http.post<Produto>(this.url, obj);
   }
 
+  // metodo para alterar produtos
+  alterar(obj: Produto): Observable<Produto> {
+    return this.http.put<Produto>(`${this.url}/${obj.id}`, obj);
+  }
+
 }
