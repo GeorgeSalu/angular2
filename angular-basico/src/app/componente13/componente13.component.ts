@@ -50,4 +50,16 @@ export class Componente13Component implements OnInit {
       })
   }
 
+  seleciona(indice: number) {
+
+    this.formulario.setValue({
+      id: this.vetor[indice].id,
+      nome: this.vetor[indice].nome,
+      valor: this.vetor[indice].valor
+    });
+
+    this.btnCadastrar = false;
+
+  }
+
 }
