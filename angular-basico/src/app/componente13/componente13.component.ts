@@ -63,4 +63,26 @@ export class Componente13Component implements OnInit {
 
   }
 
+  // metodo para alterar produtos
+  alterar() {
+    this.servico.alterar(this.formulario.value as Produto)
+      .subscribe(retorno => {
+
+        // obtendo o indice do objeto alterado
+        let indiceAlterado = this.vetor.findIndex(obj => {
+          return this.formulario.value.id === obj.id
+        })
+
+        // altera o vetor
+        this.vetor[indiceAlterado] = retorno;
+
+        // limpa o formulario
+        this.formulario.reset();
+
+        // 
+        this.btnCadastrar = true;
+
+      })
+  }
+
 }
