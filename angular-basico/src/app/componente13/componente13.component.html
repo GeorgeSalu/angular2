@@ -3,7 +3,7 @@
     <input type="text"   class="form-control" formControlName="nome" placeholder="Nome">
     <input type="number" class="form-control" formControlName="valor" placeholder="Valor">
 
-    <input type="button" class="btn btn-primary" value="Cadastrar" *ngIf="btnCadastrar"> 
+    <input type="button" class="btn btn-primary" value="Cadastrar" *ngIf="btnCadastrar" (click)="cadastrar()"> 
     <input type="button" class="btn btn-primary" value="Alterar"   *ngIf="!btnCadastrar"> 
     <input type="button" class="btn btn-primary" value="Remover"   *ngIf="!btnCadastrar"> 
 </form>

@@ -41,4 +41,13 @@ export class Componente13Component implements OnInit {
       })
   }
 
+  // metodo para cadastrar produtos
+  cadastrar() {
+    this.servico.cadastrar(this.formulario.value as Produto)
+      .subscribe(retorno => {
+        this.vetor.push(retorno);
+        this.formulario.reset();
+      })
+  }
+
 }
