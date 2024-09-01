@@ -50,7 +50,7 @@ export class Componente13Component implements OnInit {
       })
   }
 
-  seleciona(indice: number) {
+  selecionarProduto(indice: number) {
 
     this.formulario.setValue({
       id: this.vetor[indice].id,
