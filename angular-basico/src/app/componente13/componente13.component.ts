@@ -50,6 +50,7 @@ export class Componente13Component implements OnInit {
       })
   }
 
+  // metodo para selecionar um produto especifico
   selecionarProduto(indice: number) {
 
     this.formulario.setValue({
