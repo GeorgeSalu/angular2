@@ -85,4 +85,28 @@ export class Componente13Component implements OnInit {
       })
   }
 
+  // metodo para remover produtos
+  remover() {
+
+    this.servico.remover(this.formulario.value.id)
+      .subscribe(() => {
+
+        // obter o indice do vetor que sera removido
+        let indiceRemovido = this.vetor.findIndex(obj => {
+          return obj.id === this.formulario.value.id;
+        })
+
+        // remover objeto do vetor
+        this.vetor.splice(indiceRemovido, 1);
+
+        //limpar formulario
+        this.formulario.reset()
+
+        // visibilidade dos botoes
+        this.btnCadastrar = true;
+
+      })
+
+  }
+
 }
