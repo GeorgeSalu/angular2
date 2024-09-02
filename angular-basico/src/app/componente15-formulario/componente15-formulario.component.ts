@@ -1,12 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-componente15-formulario',
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './componente15-formulario.component.html',
   styleUrl: './componente15-formulario.component.css'
 })
 export class Componente15FormularioComponent {
+
+  // variavel para armazenar o nome informado
+  nome: string = '';
+
+  // output
+  @Output() funcao = new EventEmitter<string>();
+
+  // funcao para cadastrar do componete de formulario
+  cadastrarNome() {
+    this.funcao.emit(this.nome);
+  }
 
 }
