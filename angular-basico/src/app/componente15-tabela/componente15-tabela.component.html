@@ -1,1 +1,13 @@
-<p>componente15-tabela works!</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>nome</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let v of vetor">
+            <td>{{ v }}</td>
+        </tr>
+    </tbody>
+</table>
