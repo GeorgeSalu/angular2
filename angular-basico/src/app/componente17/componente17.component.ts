@@ -9,4 +9,15 @@ import { Component } from '@angular/core';
 })
 export class Componente17Component {
 
+  // variavel nome
+  nome: string = 'ralf';
+
+  // varaivel media
+  media: number = 0;
+
+  // funcao para calcular a media
+  calculo(n1: number, n2: number) {
+    return (n1 + n2) / 2;
+  }
+
 }
