@@ -2,7 +2,7 @@ import { CanActivateFn, Router } from '@angular/router';
 
 export const rotaGuard: CanActivateFn = (route, state) => {
 
-  // constate
+  // constante
   const rota = new Router;
 
   // redirecionamento
