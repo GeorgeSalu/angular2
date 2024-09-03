@@ -10,7 +10,7 @@ import { Component } from '@angular/core';
 export class Componente17Component {
 
   // variavel nome
-  nome: string = 'ralf';
+  nome: string = 'Ralf';
 
   // varaivel media
   media: number = 0;
